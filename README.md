@@ -5,7 +5,7 @@ Get a bug report on a project's dependencies.
 Looks at a GitHub repository and reports on:
 
  - number of open issues,
- - closed issues,
+ - number of closed issues,
  - average age of open issues,
  - age of oldest open issue,
  - age of newest open issue,
