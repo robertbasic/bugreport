@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace BugReportTest;
 
-use BugReport\Issues;
+use BugReport\Stats;
 use PHPUnit\Framework\TestCase;
 
-class IssuesTest extends TestCase
+class StatsTest extends TestCase
 {
     /**
      * @var Issues
@@ -20,10 +20,10 @@ class IssuesTest extends TestCase
     {
         $issues = include __DIR__ . '/fixtures/issues_mockery_all.php';
 
-        $issues = new Issues($issues);
+        $stats = new Stats($issues);
 
-        $this->assertSame(41, $issues->open());
-        $this->assertSame(0, $issues->closed());
-        $this->assertSame(9, $issues->pullRequests());
+        $this->assertSame(41, $stats->openIssues());
+        $this->assertSame(0, $stats->closedIssues());
+        $this->assertSame(9, $stats->pullRequests());
     }
 }

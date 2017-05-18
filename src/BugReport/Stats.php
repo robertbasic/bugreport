@@ -7,7 +7,7 @@ use Github\Api\ApiInterface;
 use Github\Client;
 use Github\ResultPagerInterface;
 
-class Issues
+class Stats
 {
     const OPEN_STATE = 'open';
 
@@ -39,12 +39,12 @@ class Issues
         }
     }
 
-    public function open() : int
+    public function openIssues() : int
     {
         return $this->openIssues;
     }
 
-    public function closed() : int
+    public function closedIssues() : int
     {
         return $this->closedIssues;
     }
