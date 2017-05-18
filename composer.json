@@ -1,5 +1,17 @@
 {
+    "name": "robertbasic/bugreport",
+    "description": "Get a bug report on a project's dependencies.",
+    "homepage": "http://github.com/robertbasic/bugreport",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert Basic",
+            "email": "robertbasic.com@gmail.com",
+            "homepage": "https://robertbasic.com"
+        }
+    ],
     "require": {
+        "php": ">=7.0.0",
         "symfony/console": "^3.2",
         "webmozart/assert": "^1.2",
         "knplabs/github-api": "^2.4",
