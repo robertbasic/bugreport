@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace BugReport\Command;
 
+use BugReport\GitHub\Issues as GitHubIssues;
 use BugReport\Issues;
 use BugReport\Project;
 use Github\Client;
@@ -34,8 +35,8 @@ class BugReport extends Command
         $pager = new ResultPager($client);
         $issueApi = $client->issue();
 
-        $issues = new Issues($project, $pager, $issueApi);
-        $issues();
+        $issues = (new GitHubIssues($project, $pager, $issueApi))->fetch();
+        $issues = new Issues($issues);
 
         $output->writeln("Project: " . $project->url());
         $output->writeln("Open issues: " . $issues->open());
