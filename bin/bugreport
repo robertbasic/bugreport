@@ -9,12 +9,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use BugReport\Command\BugReport;
 use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
 
 $application = new Application();
 
 $defaultCommand = new BugReport();
 
 $application->add($defaultCommand);
-$application->setDefaultCommand($defaultCommand->getName());
+$application->setDefaultCommand($defaultCommand->getName(), true);
 
 $application->run();
