@@ -4,10 +4,11 @@ declare(strict_types=1);
 namespace BugReport\Command;
 
 use BugReport\GitHub\Issues;
-use BugReport\Stats;
 use BugReport\Project;
+use BugReport\Stats;
 use Github\Client;
 use Github\ResultPager;
+use Github\ResultPagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,6 +16,23 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class BugReport extends Command
 {
+    public function __construct($name = null, Client $client = null, ResultPagerInterface $pager = null)
+    {
+        parent::__construct($name);
+
+        if (!$client) {
+            $client = new Client();
+        }
+        $this->client = $client;
+
+        if (!$pager) {
+            $pager = new ResultPager($this->client);
+        }
+        $this->pager = $pager;
+
+        $this->issueApi = $this->client->issue();
+    }
+
     protected function configure()
     {
         $this->setName('bugreport')
@@ -31,11 +49,7 @@ class BugReport extends Command
 
         $project = Project::fromUserRepo($dependency);
 
-        $client = new Client();
-        $pager = new ResultPager($client);
-        $issueApi = $client->issue();
-
-        $issues = (new Issues($project, $pager, $issueApi))->fetch();
+        $issues = (new Issues($project, $this->pager, $this->issueApi))->fetch();
         $stats = new Stats($issues);
 
         $output->writeln("Project: " . $project->url());
