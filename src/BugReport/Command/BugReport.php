@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace BugReport\Command;
 
+use BugReport\Project;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -23,5 +24,9 @@ class BugReport extends Command
         $output->writeln('Hello.');
 
         $dependency = $input->getArgument('dependency');
+
+        $project = Project::fromUserRepo($dependency);
+
+        $output->writeln($project->url());
     }
 }
