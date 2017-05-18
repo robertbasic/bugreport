@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/robertbasic/bugreport.png?branch=master)](https://travis-ci.org/robertbasic/bugreport)
+
 # bugreport
 
 Get a bug report on a project's dependencies.
