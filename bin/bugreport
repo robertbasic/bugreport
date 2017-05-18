@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+if (PHP_SAPI !== 'cli') {
+    echo 'Warning: bugreport may only be invoked from a command line', PHP_EOL;
+}
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use BugReport\Command\BugReport;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+$defaultCommand = new BugReport();
+
+$application->add($defaultCommand);
+$application->setDefaultCommand($defaultCommand->getName());
+
+$application->run();
