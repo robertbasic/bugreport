@@ -41,23 +41,26 @@ class Stats
      */
     private $openPullRequestsAverageAge = 0;
 
-    public function __construct(array $issues)
+    public function __construct(array $issues, \DateTimeImmutable $since = null)
     {
+        $timezone = new \DateTimeZone('UTC');
+
+        if ($since === null) {
+            $since = new \DateTimeImmutable('now', $timezone);
+        }
+
         $pullRequestsOpenForDays = 0;
         $issuesOpenForDays = 0;
-
-        $timezone = new \DateTimeZone('UTC');
-        $now = new \DateTimeImmutable('now', $timezone);
 
         foreach ($issues as $issue) {
             $createdAt = new \DateTimeImmutable($issue['created_at'], $timezone);
 
             if ($this->isPullRequest($issue) && $this->isOpen($issue)) {
-                $pullRequestsOpenForDays += $this->openForDays($createdAt, $now);
+                $pullRequestsOpenForDays += $this->openForDays($createdAt, $since);
 
                 $this->openPullRequests++;
             } elseif ($this->isOpen($issue)) {
-                $ageOfIssue = $this->openForDays($createdAt, $now);
+                $ageOfIssue = $this->openForDays($createdAt, $since);
                 $issuesOpenForDays += $ageOfIssue;
 
                 $this->findOldestOpenIssue($ageOfIssue);
@@ -111,9 +114,9 @@ class Stats
         return isset($issue['pull_request']);
     }
 
-    private function openForDays(\DateTimeImmutable $createdAt, \DateTimeImmutable $now) : int
+    private function openForDays(\DateTimeImmutable $createdAt, \DateTimeImmutable $since) : int
     {
-        return $now->diff($createdAt)->days;
+        return $since->diff($createdAt)->days;
     }
 
     private function findOldestOpenIssue(int $ageOfIssue)
