@@ -52,10 +52,10 @@ class Stats
         $issuesOpenForDays = 0;
 
         $timezone = new \DateTimeZone('UTC');
-        $now = new \DateTime('now', $timezone);
+        $now = new \DateTimeImmutable('now', $timezone);
 
         foreach ($issues as $issue) {
-            $createdAt = new \DateTime($issue['created_at'], $timezone);
+            $createdAt = new \DateTimeImmutable($issue['created_at'], $timezone);
 
             if ($this->isPullRequest($issue) && $this->isOpen($issue)) {
                 $pullRequestsOpenForDays += $this->openForDays($createdAt, $now);
@@ -123,7 +123,7 @@ class Stats
         return isset($issue['pull_request']);
     }
 
-    private function openForDays(\DateTime $createdAt, \DateTime $now) : int
+    private function openForDays(\DateTimeImmutable $createdAt, \DateTimeImmutable $now) : int
     {
         return $now->diff($createdAt)->days;
     }
