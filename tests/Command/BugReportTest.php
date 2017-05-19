@@ -42,11 +42,6 @@ class BugReportTest extends TestCase
      */
     private $issueApi;
 
-    /**
-     * @var BugReport
-     */
-    private $command;
-
     public function setup()
     {
         $this->input = Mockery::mock(InputInterface::class);
@@ -59,14 +54,12 @@ class BugReportTest extends TestCase
         $this->client->shouldReceive()
             ->issue()
             ->andReturn($this->issueApi);
-
-        $this->command = new BugReportTestCommand('bugreport', $this->client, $this->pager);
     }
 
     /**
      * @test
      */
-    public function it_executes()
+    public function it_executes_for_a_provided_dependency()
     {
         $this->input->shouldReceive()
             ->getArgument('dependency')
@@ -89,7 +82,42 @@ class BugReportTest extends TestCase
             ->once()
             ->andReturn($issues);
 
-        $this->command->execute($this->input, $this->output);
+        $command = new BugReportTestCommand('bugreport', null, $this->client, $this->pager);
+        $command->execute($this->input, $this->output);
+    }
+
+    /**
+     * @test
+     */
+    public function it_does_not_execute_when_it_cannot_find_a_composer_lock_file()
+    {
+        $this->input->shouldReceive()
+            ->getArgument('dependency')
+            ->once()
+            ->andReturnNull();
+
+        $this->output->shouldReceive()
+            ->writeln(Mockery::pattern('/.* is not a composer.lock file/'))
+            ->once();
+
+        $command = new BugReportTestCommand('bugreport', 'non-existent-path', $this->client, $this->pager);
+
+        $command->execute($this->input, $this->output);
+    }
+
+    /**
+     * @test
+     */
+    public function it_executes_for_an_existing_composer_lock_file()
+    {
+        $this->input->shouldReceive()
+            ->getArgument('dependency')
+            ->once()
+            ->andReturnNull();
+
+        $command = new BugReportTestCommand('bugreport', getcwd() . '/tests/fixtures/composer.lock', $this->client, $this->pager);
+
+        $command->execute($this->input, $this->output);
     }
 }
 

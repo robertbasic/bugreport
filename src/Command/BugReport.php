@@ -16,9 +16,35 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class BugReport extends Command
 {
-    public function __construct($name = null, Client $client = null, ResultPagerInterface $pager = null)
+
+    /**
+     * @var string
+     */
+    private $lockfile;
+
+    /**
+     * @var Client
+     */
+    private $client;
+
+    /**
+     * @var ResultPagerInterface
+     */
+    private $pager;
+
+    /**
+     * @var ApiInterface
+     */
+    private $issueApi;
+
+    public function __construct($name = null, string $lockfile = null, Client $client = null, ResultPagerInterface $pager = null)
     {
         parent::__construct($name);
+
+        if (!$lockfile) {
+            $lockfile = getcwd() . DIRECTORY_SEPARATOR . 'composer.lock';
+        }
+        $this->lockfile = $lockfile;
 
         if (!$client) {
             $client = new Client();
@@ -54,12 +80,12 @@ class BugReport extends Command
 
     protected function handleProjectDependencies(OutputInterface $output)
     {
-        $lockfile = getcwd() . DIRECTORY_SEPARATOR . 'composer.lock';
-
-        if (!is_file($lockfile)) {
-            $output->writeln('No composer.lock file found in ' . getcwd());
+        if (!is_file($this->lockfile)) {
+            $output->writeln($this->lockfile . ' is not a composer.lock file');
             return;
         }
+
+
     }
 
     protected function handleProjectDependency(string $dependency, OutputInterface $output)
