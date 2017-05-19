@@ -43,16 +43,15 @@ class BugReport extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello.');
-
         $dependency = $input->getArgument('dependency');
 
         $project = Project::fromUserRepo($dependency);
 
+        $output->writeln('Getting bugreport for ' . $project->url());
+
         $issues = (new Issues($project, $this->pager, $this->issueApi))->fetch();
         $stats = new Stats($issues);
 
-        $output->writeln("Project: " . $project->url());
         $output->writeln("Open issues: " . $stats->openIssues());
         $output->writeln("Closed issues: " . $stats->closedIssues());
         $output->writeln("Open pull requests: " . $stats->pullRequests());
