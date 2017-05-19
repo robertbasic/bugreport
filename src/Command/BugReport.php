@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace BugReport\Command;
 
 use BugReport\GitHub\Issues;
+use BugReport\InstalledDependencies;
 use BugReport\Project;
 use BugReport\Stats\Dependency as DependencyStats;
 use Github\Client;
@@ -85,7 +86,13 @@ class BugReport extends Command
             return;
         }
 
+        $installedDependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
 
+        $output->writeln('Getting bugreport for ' . $installedDependencies->total() . ' installed dependencies');
+
+        foreach ($installedDependencies as $dependency) {
+            $this->handleProjectDependency($dependency, $output);
+        }
     }
 
     protected function handleProjectDependency(string $dependency, OutputInterface $output)
