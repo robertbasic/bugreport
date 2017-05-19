@@ -31,7 +31,7 @@ class Stats
         foreach ($issues as $issue) {
             if ($this->isPullRequest($issue) && $this->isOpen($issue)) {
                 $this->openPullRequests++;
-            } else if ($this->isOpen($issue)) {
+            } elseif ($this->isOpen($issue)) {
                 $this->openIssues++;
             } else {
                 $this->closedIssues++;

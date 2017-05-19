@@ -1,8 +1,8 @@
 <?php
 // 41 open issue, 0 closed issues, 9 pull requests
-return array (
-  0 => 
-  array (
+return array(
+  0 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/750',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/750/labels{/name}',
@@ -12,8 +12,8 @@ return array (
     'id' => 228912652,
     'number' => 750,
     'title' => 'Fix/issue208',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'robertbasic',
       'id' => 166625,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -32,22 +32,22 @@ return array (
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2017-05-16T04:32:21Z',
     'updated_at' => '2017-05-16T04:36:08Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/750',
       'html_url' => 'https://github.com/mockery/mockery/pull/750',
       'diff_url' => 'https://github.com/mockery/mockery/pull/750.diff',
@@ -55,8 +55,8 @@ return array (
     ),
     'body' => '',
   ),
-  1 => 
-  array (
+  1 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/748',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/748/labels{/name}',
@@ -66,8 +66,8 @@ return array (
     'id' => 228567528,
     'number' => 748,
     'title' => 'ShouldNotHaveReceived and HigherOrderMessage',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -86,20 +86,20 @@ return array (
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2017-05-14T20:25:16Z',
     'updated_at' => '2017-05-14T20:25:16Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I think I can fix this:
 
 ``` php
@@ -109,8 +109,8 @@ $spy->shouldNotHaveReceived()->foo(123);
 
 ```',
   ),
-  2 => 
-  array (
+  2 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/744',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/744/labels{/name}',
@@ -120,8 +120,8 @@ $spy->shouldNotHaveReceived()->foo(123);
     'id' => 228494485,
     'number' => 744,
     'title' => 'Fixes all risky tests',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -140,22 +140,22 @@ $spy->shouldNotHaveReceived()->foo(123);
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2017-05-13T19:18:51Z',
     'updated_at' => '2017-05-13T19:23:12Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/744',
       'html_url' => 'https://github.com/mockery/mockery/pull/744',
       'diff_url' => 'https://github.com/mockery/mockery/pull/744.diff',
@@ -169,8 +169,8 @@ The confusing tests are the ones where we want the actual test to throw one of o
 
 There are a lot of tests that have been added for bugs and special cases, which aren\'t all that clear. I\'ve left them alone, only adding the odd assertion to make them go green rather than yellow. I\'d rather have the odd bit of confusion for an individual test, than newcomers to the project run the suite and see loads of risky tests.',
   ),
-  3 => 
-  array (
+  3 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/742',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/742/labels{/name}',
@@ -180,8 +180,8 @@ There are a lot of tests that have been added for bugs and special cases, which 
     'id' => 228456107,
     'number' => 742,
     'title' => 'Risky Tests',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -200,13 +200,13 @@ There are a lot of tests that have been added for bugs and special cases, which 
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => 
-    array (
+    'assignee' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -225,10 +225,10 @@ There are a lot of tests that have been added for bugs and special cases, which 
       'type' => 'User',
       'site_admin' => false,
     ),
-    'assignees' => 
-    array (
-      0 => 
-      array (
+    'assignees' =>
+    array(
+      0 =>
+      array(
         'login' => 'davedevelopment',
         'id' => 61351,
         'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -248,15 +248,15 @@ There are a lot of tests that have been added for bugs and special cases, which 
         'site_admin' => false,
       ),
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 2,
     'created_at' => '2017-05-13T07:39:00Z',
     'updated_at' => '2017-05-13T09:50:38Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Fix them...',
   ),
-  4 => 
-  array (
+  4 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/741',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/741/labels{/name}',
@@ -266,8 +266,8 @@ There are a lot of tests that have been added for bugs and special cases, which 
     'id' => 228454848,
     'number' => 741,
     'title' => 'Fix read the docs configuration',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'robertbasic',
       'id' => 166625,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -286,18 +286,18 @@ There are a lot of tests that have been added for bugs and special cases, which 
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
         'color' => 'e10c02',
         'default' => true,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 91001,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/documentation',
         'name' => 'documentation',
@@ -307,15 +307,15 @@ There are a lot of tests that have been added for bugs and special cases, which 
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2017-05-13T07:08:53Z',
     'updated_at' => '2017-05-13T07:08:53Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Whoever has control over read the docs configuration should probably update it so it points to the new repository, as well as turn off PDF generation, because the builds keep failing with:
 
 ```
@@ -323,8 +323,8 @@ Error
 No TeX files were found
 ```',
   ),
-  5 => 
-  array (
+  5 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/739',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/739/labels{/name}',
@@ -334,8 +334,8 @@ No TeX files were found
     'id' => 228454461,
     'number' => 739,
     'title' => 'Upgrade docs for 1.0.0',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'robertbasic',
       'id' => 166625,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -354,18 +354,18 @@ No TeX files were found
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91001,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/documentation',
         'name' => 'documentation',
         'color' => '02d7e1',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -375,8 +375,8 @@ No TeX files were found
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => 
-    array (
+    'assignee' =>
+    array(
       'login' => 'robertbasic',
       'id' => 166625,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -395,10 +395,10 @@ No TeX files were found
       'type' => 'User',
       'site_admin' => false,
     ),
-    'assignees' => 
-    array (
-      0 => 
-      array (
+    'assignees' =>
+    array(
+      0 =>
+      array(
         'login' => 'robertbasic',
         'id' => 166625,
         'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -418,15 +418,15 @@ No TeX files were found
         'site_admin' => false,
       ),
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2017-05-13T06:59:47Z',
     'updated_at' => '2017-05-13T06:59:47Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Need to document a sort of how to upgrade to 1.0.0. A short list of new features, and known BC breaks and how to deal with them.',
   ),
-  6 => 
-  array (
+  6 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/736',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/736/labels{/name}',
@@ -436,8 +436,8 @@ No TeX files were found
     'id' => 227453547,
     'number' => 736,
     'title' => 'Track internally bad method calls',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'robertbasic',
       'id' => 166625,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -456,22 +456,22 @@ No TeX files were found
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 11,
     'created_at' => '2017-05-09T18:17:24Z',
     'updated_at' => '2017-05-14T20:19:10Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/736',
       'html_url' => 'https://github.com/mockery/mockery/pull/736',
       'diff_url' => 'https://github.com/mockery/mockery/pull/736.diff',
@@ -488,8 +488,8 @@ Mockery\'s exceptions and silencing them.
 
 Fixes #613',
   ),
-  7 => 
-  array (
+  7 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/733',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/733/labels{/name}',
@@ -499,8 +499,8 @@ Fixes #613',
     'id' => 227302628,
     'number' => 733,
     'title' => 'Pretty printing for objects',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'robertbasic',
       'id' => 166625,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/166625?v=3',
@@ -519,18 +519,18 @@ Fixes #613',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -540,23 +540,23 @@ Fixes #613',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2017-05-09T09:24:23Z',
     'updated_at' => '2017-05-09T09:24:23Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'With #732 I\'m pretty much ripping out pretty-printing of objects when some things don\'t match.
 
 We should have pretty-printing, but not at a cost of having random side effects in people\'s application code.
 
 See #619 for additional discussion.',
   ),
-  8 => 
-  array (
+  8 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/728',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/728/labels{/name}',
@@ -566,8 +566,8 @@ See #619 for additional discussion.',
     'id' => 224627740,
     'number' => 728,
     'title' => 'PHPUnit 6 support',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'padraic',
       'id' => 19780,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/19780?v=3',
@@ -586,24 +586,24 @@ See #619 for additional discussion.',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 8,
     'created_at' => '2017-04-26T23:28:08Z',
     'updated_at' => '2017-04-28T10:14:25Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Hey @davedevelopment, are there any blockers to this other than renaming test classes/ exception methods where appropriate in the tests? I see a few conflicts over on Humbug repos, I\'d like to resolve. So happy to do a PR over the weekend.',
   ),
-  9 => 
-  array (
+  9 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/726',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/726/labels{/name}',
@@ -613,8 +613,8 @@ See #619 for additional discussion.',
     'id' => 224192694,
     'number' => 726,
     'title' => 'nullable function returns 0 when using andReturnNull()',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'sota1235',
       'id' => 2968860,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/2968860?v=3',
@@ -633,18 +633,18 @@ See #619 for additional discussion.',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 601001140,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/0.9.x',
         'name' => '0.9.x',
         'color' => 'e99695',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
@@ -654,15 +654,15 @@ See #619 for additional discussion.',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2017-04-25T16:11:29Z',
     'updated_at' => '2017-05-09T04:21:16Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'When mocking nullable function and specify to return `null`, it will return `0`.
 Like this.
 
@@ -709,8 +709,8 @@ Thank you :)
 
 Maybe this issue is related to #654',
   ),
-  10 => 
-  array (
+  10 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/713',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/713/labels{/name}',
@@ -720,8 +720,8 @@ Maybe this issue is related to #654',
     'id' => 213326030,
     'number' => 713,
     'title' => 'Deprecate makePartial() as it proxies to shouldDeferMissing()',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'joshbrw',
       'id' => 779766,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/779766?v=3',
@@ -740,18 +740,18 @@ Maybe this issue is related to #654',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -761,19 +761,19 @@ Maybe this issue is related to #654',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 2,
     'created_at' => '2017-03-10T12:15:26Z',
     'updated_at' => '2017-05-09T04:22:51Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Does it make sense to have both `Mock::makePartial()` and `Mock::deferMissing()`? `makePartial()` simply proxies to `shouldDeferMissing()` so may it be worth deprecating one? ',
   ),
-  11 => 
-  array (
+  11 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/712',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/712/labels{/name}',
@@ -783,8 +783,8 @@ Maybe this issue is related to #654',
     'id' => 213037143,
     'number' => 712,
     'title' => 'RFC: Callable spies',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -803,22 +803,22 @@ Maybe this issue is related to #654',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2017-03-09T13:29:27Z',
     'updated_at' => '2017-03-13T09:34:14Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/712',
       'html_url' => 'https://github.com/mockery/mockery/pull/712',
       'diff_url' => 'https://github.com/mockery/mockery/pull/712.diff',
@@ -845,8 +845,8 @@ Maybe this issue is related to #654',
 - [ ] Make it available for mocking as well? It would mean coming up with some syntax or probably overloading `expects` and `allows` somehow. Might get too complicated.
 - [ ] `shouldNotHaveBeenCalledWith(123, 456, 789)` ? I think I prefer this for specifying arguments with a `not`',
   ),
-  12 => 
-  array (
+  12 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/711',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/711/labels{/name}',
@@ -856,8 +856,8 @@ Maybe this issue is related to #654',
     'id' => 212862227,
     'number' => 711,
     'title' => 'Allow closure spies',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'tflori',
       'id' => 4855611,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/4855611?v=3',
@@ -876,18 +876,18 @@ Maybe this issue is related to #654',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -897,15 +897,15 @@ Maybe this issue is related to #654',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2017-03-08T21:29:23Z',
     'updated_at' => '2017-05-09T04:23:12Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Currently I write something like this when I want to test that a closure gets executed:
 
 ```php
@@ -964,8 +964,8 @@ class SomethingTest extends TestCase
 ```
 ',
   ),
-  13 => 
-  array (
+  13 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/696',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/696/labels{/name}',
@@ -975,8 +975,8 @@ class SomethingTest extends TestCase
     'id' => 206860484,
     'number' => 696,
     'title' => 'Demeter chains need to consider return type hints',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Kwadz',
       'id' => 1472599,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/1472599?v=3',
@@ -995,10 +995,10 @@ class SomethingTest extends TestCase
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -1008,15 +1008,15 @@ class SomethingTest extends TestCase
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 4,
     'created_at' => '2017-02-10T17:43:37Z',
     'updated_at' => '2017-02-13T17:07:29Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I follow [Mocking Demeter Chains And Fluent Interfaces](http://docs.mockery.io/en/latest/reference/demeter_chains.html#mocking-demeter-chains-and-fluent-interfaces).
 
 The following test gives this error: `Return value of Mockery_2_MyApp_Model_Entity_PaymentTransaction::getOfferPayment() must be an instance of MyApp\\Model\\Entity\\OfferPayment, instance of Mockery_3__demeter_getOfferPayment returned`
@@ -1049,8 +1049,8 @@ class TransactionManager
 
 What is wrong?',
   ),
-  14 => 
-  array (
+  14 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/695',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/695/labels{/name}',
@@ -1060,8 +1060,8 @@ What is wrong?',
     'id' => 206757474,
     'number' => 695,
     'title' => 'Fix TestListener for php 6 version.',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'bruli',
       'id' => 760646,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/760646?v=3',
@@ -1080,22 +1080,22 @@ What is wrong?',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 9,
     'created_at' => '2017-02-10T10:16:35Z',
     'updated_at' => '2017-04-25T15:53:52Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/695',
       'html_url' => 'https://github.com/mockery/mockery/pull/695',
       'diff_url' => 'https://github.com/mockery/mockery/pull/695.diff',
@@ -1103,8 +1103,8 @@ What is wrong?',
     ),
     'body' => '',
   ),
-  15 => 
-  array (
+  15 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/675',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/675/labels{/name}',
@@ -1114,8 +1114,8 @@ What is wrong?',
     'id' => 202347547,
     'number' => 675,
     'title' => 'Allowed mocking __clone method',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Bilge',
       'id' => 470626,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/470626?v=3',
@@ -1134,22 +1134,22 @@ What is wrong?',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2017-01-21T23:41:31Z',
     'updated_at' => '2017-01-26T08:44:11Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/675',
       'html_url' => 'https://github.com/mockery/mockery/pull/675',
       'diff_url' => 'https://github.com/mockery/mockery/pull/675.diff',
@@ -1161,8 +1161,8 @@ As a bonus, added test namespace (`MockeryTest`) to Composer autoloader to save 
 
 Resolves #669.',
   ),
-  16 => 
-  array (
+  16 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/663',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/663/labels{/name}',
@@ -1172,8 +1172,8 @@ Resolves #669.',
     'id' => 198251157,
     'number' => 663,
     'title' => 'overload class is not working correctly',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'dbwhddn10',
       'id' => 1523570,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/1523570?v=3',
@@ -1192,10 +1192,10 @@ Resolves #669.',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 598483044,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/waiting%20for%20feedback',
         'name' => 'waiting for feedback',
@@ -1205,15 +1205,15 @@ Resolves #669.',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 2,
     'created_at' => '2016-12-31T23:50:59Z',
     'updated_at' => '2017-05-05T06:31:15Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => '```
     public function testAAA()
     {
@@ -1230,8 +1230,8 @@ Method bbb() from App\\Database\\Repositories\\AAA
 should be called exactly 1 times but called 0 times.
 ',
   ),
-  17 => 
-  array (
+  17 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/660',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/660/labels{/name}',
@@ -1241,8 +1241,8 @@ should be called exactly 1 times but called 0 times.
     'id' => 197721952,
     'number' => 660,
     'title' => 'Final method mocking does not work throgh proxy',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'tflori',
       'id' => 4855611,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/4855611?v=3',
@@ -1261,18 +1261,18 @@ should be called exactly 1 times but called 0 times.
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
         'color' => 'e10c02',
         'default' => true,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 598483998,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/investigate',
         'name' => 'investigate',
@@ -1282,15 +1282,15 @@ should be called exactly 1 times but called 0 times.
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 5,
     'created_at' => '2016-12-27T15:56:06Z',
     'updated_at' => '2017-05-05T06:32:54Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'After some debugging I found out the method is final but in the docs it says I can mock a final method with proxied partial mock. But it keeps annoying me with "should be called exactly 1 times but called 0 times" :cry: 
 
 Example:
@@ -1315,8 +1315,8 @@ $mock->testMethod(\'foobar\');
 Mockery::close();
 ```',
   ),
-  18 => 
-  array (
+  18 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/659',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/659/labels{/name}',
@@ -1326,8 +1326,8 @@ Mockery::close();
     'id' => 196728257,
     'number' => 659,
     'title' => 'shouldThrow gives a misleading backtrace',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'PatrickRose',
       'id' => 1681612,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/1681612?v=3',
@@ -1346,10 +1346,10 @@ Mockery::close();
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -1359,15 +1359,15 @@ Mockery::close();
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2016-12-20T17:12:09Z',
     'updated_at' => '2017-05-05T06:33:15Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Consider the following:
 
 ```php
@@ -1412,8 +1412,8 @@ LogicException: This went wrong
 
 It\'d be much more helpful if Mockery could lazily throw the exception so the backtrace pointed to the time the method was called.',
   ),
-  19 => 
-  array (
+  19 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/650',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/650/labels{/name}',
@@ -1423,8 +1423,8 @@ It\'d be much more helpful if Mockery could lazily throw the exception so the ba
     'id' => 194827615,
     'number' => 650,
     'title' => 'Creating an alias or overload of an interface containing __construct fails',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'chappy84',
       'id' => 912440,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/912440?v=3',
@@ -1443,18 +1443,18 @@ It\'d be much more helpful if Mockery could lazily throw the exception so the ba
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 598483998,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/investigate',
         'name' => 'investigate',
         'color' => 'f9d0c4',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 598483044,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/waiting%20for%20feedback',
         'name' => 'waiting for feedback',
@@ -1464,15 +1464,15 @@ It\'d be much more helpful if Mockery could lazily throw the exception so the ba
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 9,
     'created_at' => '2016-12-11T11:48:17Z',
     'updated_at' => '2017-05-14T16:51:38Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'When trying to create a test double of an existing class that implements the correct interface, a `BadMethodCallException` is thrown (in the case of `alias:`) or the generated code contains syntax errors (in the case of `overload:`)
 
 This can be reproduced easily with the following POCs:
@@ -1525,8 +1525,8 @@ will produce the following output:
 
 These are both present in the latest 0.9.6 release',
   ),
-  20 => 
-  array (
+  20 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/644',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/644/labels{/name}',
@@ -1536,8 +1536,8 @@ These are both present in the latest 0.9.6 release',
     'id' => 191927946,
     'number' => 644,
     'title' => 'Missing changelog',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'remicollet',
       'id' => 270445,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/270445?v=3',
@@ -1556,18 +1556,18 @@ These are both present in the latest 0.9.6 release',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91001,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/documentation',
         'name' => 'documentation',
         'color' => '02d7e1',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -1577,22 +1577,22 @@ These are both present in the latest 0.9.6 release',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2016-11-28T06:22:14Z',
     'updated_at' => '2017-05-05T06:35:10Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Hi,
 
 Changelog in 0.9 and master are outdated, no entry about 0.9.5 / 0.9.6.
 Please http://keepachangelog.com/',
   ),
-  21 => 
-  array (
+  21 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/624',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/624/labels{/name}',
@@ -1602,8 +1602,8 @@ Please http://keepachangelog.com/',
     'id' => 178774914,
     'number' => 624,
     'title' => 'Exception report with mockery isn\'t friendly',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'peixinchen',
       'id' => 2504905,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/2504905?v=3',
@@ -1622,10 +1622,10 @@ Please http://keepachangelog.com/',
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 598483044,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/waiting%20for%20feedback',
         'name' => 'waiting for feedback',
@@ -1635,15 +1635,15 @@ Please http://keepachangelog.com/',
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 4,
     'created_at' => '2016-09-23T03:17:41Z',
     'updated_at' => '2017-05-09T04:28:17Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => '```
 There was 1 error:
 
@@ -1658,8 +1658,8 @@ exception \'ErrorException\' with message \'unserialize(): Error at offset 0 of 
 If I got a mistake, the report always like this, and I could not understand what happend? So do I have a better way to solved this?
 ',
   ),
-  22 => 
-  array (
+  22 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/613',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/613/labels{/name}',
@@ -1669,8 +1669,8 @@ If I got a mistake, the report always like this, and I could not understand what
     'id' => 164484162,
     'number' => 613,
     'title' => 'Mockery exceptions being caught in tested code',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'luispabon',
       'id' => 6388823,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/6388823?v=3',
@@ -1689,10 +1689,10 @@ If I got a mistake, the report always like this, and I could not understand what
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
@@ -1702,20 +1702,20 @@ If I got a mistake, the report always like this, and I could not understand what
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 19,
     'created_at' => '2016-07-08T08:38:50Z',
     'updated_at' => '2017-05-12T04:13:32Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'As per title. When an expectation fails on a Mockery mock, it throws an exception which is caught by application exception catchers instead of being aggregated at the test case level. It\'s impossible to know what expectation failed unless you actually go in code to where the exception is being caught and dump the exception for information.
 ',
   ),
-  23 => 
-  array (
+  23 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/607',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/607/labels{/name}',
@@ -1725,8 +1725,8 @@ If I got a mistake, the report always like this, and I could not understand what
     'id' => 159783539,
     'number' => 607,
     'title' => 'Cannot Override Multiple Default Demeter Chains',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'bbatsche',
       'id' => 500909,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/500909?v=3',
@@ -1745,10 +1745,10 @@ If I got a mistake, the report always like this, and I could not understand what
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 598483044,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/waiting%20for%20feedback',
         'name' => 'waiting for feedback',
@@ -1758,15 +1758,15 @@ If I got a mistake, the report always like this, and I could not understand what
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2016-06-11T17:20:27Z',
     'updated_at' => '2017-05-05T06:40:23Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I am trying to mock the same demeter chain on two separate objects. What I\'ve tried to do is create the mock objects in `setUp()` and declare default expectations for their demeter chains there. Then, in the test methods, override one or the other default expectations. When I do this however, only the first demeter chain\'s expectations get overwritten, never the second.
 
 Here is my stripped down example code:
@@ -1853,8 +1853,8 @@ Failed asserting that two arrays are equal.
 ```
 ',
   ),
-  24 => 
-  array (
+  24 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/605',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/605/labels{/name}',
@@ -1864,8 +1864,8 @@ Failed asserting that two arrays are equal.
     'id' => 159397378,
     'number' => 605,
     'title' => 'No exception raised when trying to mock final methods',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Bilge',
       'id' => 470626,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/470626?v=3',
@@ -1884,25 +1884,25 @@ Failed asserting that two arrays are equal.
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2016-06-09T12:38:22Z',
     'updated_at' => '2016-06-09T12:38:22Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Although Mockery will issue an exception when trying to mock a `final` _class_ it issues no such exception when trying to mock a `final` _method_. Instead, it silently fails to mock the method which can be a source of great confusion.
 ',
   ),
-  25 => 
-  array (
+  25 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/603',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/603/labels{/name}',
@@ -1912,8 +1912,8 @@ Failed asserting that two arrays are equal.
     'id' => 158957428,
     'number' => 603,
     'title' => 'Option to use custom objectToArray implementation',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'MartinMystikJonas',
       'id' => 2094752,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/2094752?v=3',
@@ -1932,10 +1932,10 @@ Failed asserting that two arrays are equal.
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -1945,15 +1945,15 @@ Failed asserting that two arrays are equal.
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2016-06-07T15:45:04Z',
     'updated_at' => '2017-05-09T04:54:53Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Some of our object have public properties accessible only when object is in correct state. If object is in wrong state attempt to read this property raises excetion (magic __get).
 
 This is problem when Mockery tries to convert these objects to array in for example Unexpected calls messages.
@@ -1961,8 +1961,8 @@ This is problem when Mockery tries to convert these objects to array in for exam
 We would like to have option to set custom implemenation of objectToArray via configuration.
 ',
   ),
-  26 => 
-  array (
+  26 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/595',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/595/labels{/name}',
@@ -1972,8 +1972,8 @@ We would like to have option to set custom implemenation of objectToArray via co
     'id' => 153463678,
     'number' => 595,
     'title' => 'Alias mock with constants using anonymous function',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'mnabialek',
       'id' => 7656807,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/7656807?v=3',
@@ -1992,10 +1992,10 @@ We would like to have option to set custom implemenation of objectToArray via co
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -2005,15 +2005,15 @@ We would like to have option to set custom implemenation of objectToArray via co
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2016-05-06T14:32:22Z',
     'updated_at' => '2017-05-05T06:41:23Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Is it possible somehow to use anonymous classes (PHP 7) for `namedMock()`? 
 
 For example I have class with constants, so I need to create something like this:
@@ -2038,8 +2038,8 @@ but at the moment it\'s not working
 This is also connected with issue #491 
 ',
   ),
-  27 => 
-  array (
+  27 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/566',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/566/labels{/name}',
@@ -2049,8 +2049,8 @@ This is also connected with issue #491
     'id' => 145090866,
     'number' => 566,
     'title' => 'first expectations are less specific than last',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'tflori',
       'id' => 4855611,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/4855611?v=3',
@@ -2069,22 +2069,22 @@ This is also connected with issue #491
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 10,
     'created_at' => '2016-04-01T05:36:25Z',
     'updated_at' => '2017-03-02T14:44:50Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/566',
       'html_url' => 'https://github.com/mockery/mockery/pull/566',
       'diff_url' => 'https://github.com/mockery/mockery/pull/566.diff',
@@ -2095,8 +2095,8 @@ This is also connected with issue #491
 but it should be testet too. say me where I should write this test and I can write a test.
 ',
   ),
-  28 => 
-  array (
+  28 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/534',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/534/labels{/name}',
@@ -2106,8 +2106,8 @@ but it should be testet too. say me where I should write this test and I can wri
     'id' => 127310940,
     'number' => 534,
     'title' => 'Cannot create an expectation that is called from the constructor',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Bilge',
       'id' => 470626,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/470626?v=3',
@@ -2126,20 +2126,20 @@ but it should be testet too. say me where I should write this test and I can wri
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2016-01-18T21:05:20Z',
     'updated_at' => '2016-01-18T21:05:20Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Mockery calls the constructor before expectations are created so it is not possible to mock a method that will be called from the constructor.
 
 ``` php
@@ -2170,8 +2170,8 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
 > Method create() from Mockery_0_Foo should be called exactly 1 times but called 0 times.
 ',
   ),
-  29 => 
-  array (
+  29 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/531',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/531/labels{/name}',
@@ -2181,8 +2181,8 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
     'id' => 125615623,
     'number' => 531,
     'title' => 'Feature: expect subset of method parameters',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Bilge',
       'id' => 470626,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/470626?v=3',
@@ -2201,10 +2201,10 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -2214,20 +2214,20 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 8,
     'created_at' => '2016-01-08T13:44:46Z',
     'updated_at' => '2017-05-05T06:46:19Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Currently all or no method parameters must be expected. It should be possible to expect a subset of parameters. For example, if I am only interested in the first parameter I should be able to specify how the first matches but then be able to indicate to Mockery in some way that any additional parameters are unimportant, whether they\'re present or not.
 ',
   ),
-  30 => 
-  array (
+  30 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/520',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/520/labels{/name}',
@@ -2237,8 +2237,8 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
     'id' => 117111141,
     'number' => 520,
     'title' => 'No way to mock methods returning generators',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Bilge',
       'id' => 470626,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/470626?v=3',
@@ -2257,10 +2257,10 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -2270,20 +2270,20 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 0,
     'created_at' => '2015-11-16T12:14:39Z',
     'updated_at' => '2017-05-05T06:46:32Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'There should be a way to mock methods that return generators, i.e. `MockInterface::andYield($foo, $bar, ...)`.
 ',
   ),
-  31 => 
-  array (
+  31 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/508',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/508/labels{/name}',
@@ -2293,8 +2293,8 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
     'id' => 108648277,
     'number' => 508,
     'title' => 'Feature request: a way to capture arguments',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'marcaube',
       'id' => 1478986,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/1478986?v=3',
@@ -2313,10 +2313,10 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -2326,15 +2326,15 @@ final class FooTest extends \\PHPUnit_Framework_TestCase
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 4,
     'created_at' => '2015-09-28T12:32:08Z',
     'updated_at' => '2017-05-05T06:48:06Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'As requested by @davedevelopment on twitter, here\'s a feature request for a method to capture arguments, just like [Phake::capture()](http://phake.readthedocs.org/en/2.1/method-parameter-matchers.html#parameter-capturing).
 
 I had a situation recently where this would have been useful. I was writing a class to implement our `EventDispatcherInterface` using `league/event`. With this library, listeners can be of type `callable`or `League\\Event\\ListenerInterface`. To make it compatible with our `ListenerInterface`, our dispatcher wraps the listeners in an anonymous function.
@@ -2379,8 +2379,8 @@ class LeagueDispatcherTest extends Mockery\\Adapter\\Phpunit\\MockeryTestCase
 ```
 ',
   ),
-  32 => 
-  array (
+  32 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/452',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/452/labels{/name}',
@@ -2390,8 +2390,8 @@ class LeagueDispatcherTest extends Mockery\\Adapter\\Phpunit\\MockeryTestCase
     'id' => 59815495,
     'number' => 452,
     'title' => 'Mocks from hardcoded dependities lacks of interface implementations',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'kamileczek',
       'id' => 11316179,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/11316179?v=3',
@@ -2410,10 +2410,10 @@ class LeagueDispatcherTest extends Mockery\\Adapter\\Phpunit\\MockeryTestCase
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 598483044,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/waiting%20for%20feedback',
         'name' => 'waiting for feedback',
@@ -2423,15 +2423,15 @@ class LeagueDispatcherTest extends Mockery\\Adapter\\Phpunit\\MockeryTestCase
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2015-03-04T15:43:56Z',
     'updated_at' => '2017-05-05T10:19:58Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'In case when I want to mock hardcoded dependities i always use overlod option.
 
 Mockery::mock(\'overload:someClass\');
@@ -2445,8 +2445,8 @@ if (!someClass instanceof SomeInterface) {
 It\'s always ends in throwing exception because "overloaded" mock do not implements that interface. Why Mockery didn\'t fetch interfaces from overloaded class and append it to mock to keep class identical to overloaded one? 
 ',
   ),
-  33 => 
-  array (
+  33 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/397',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/397/labels{/name}',
@@ -2456,8 +2456,8 @@ It\'s always ends in throwing exception because "overloaded" mock do not impleme
     'id' => 49020351,
     'number' => 397,
     'title' => 'Display a stack trace of the calls when the expected count doesn\'t match the actual count',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'tomzx',
       'id' => 188960,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/188960?v=3',
@@ -2476,10 +2476,10 @@ It\'s always ends in throwing exception because "overloaded" mock do not impleme
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -2489,15 +2489,15 @@ It\'s always ends in throwing exception because "overloaded" mock do not impleme
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2014-11-16T23:28:26Z',
     'updated_at' => '2015-02-13T13:00:45Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Hi,
 
 It would speed up debugging if it was possible somehow have the stack trace of mocked methods calls that do not have their expected count = actual count at the end of a test.
@@ -2515,8 +2515,8 @@ My understanding is that you\'d basically have to record all stack trace when ca
 Thanks!
 ',
   ),
-  34 => 
-  array (
+  34 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/393',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/393/labels{/name}',
@@ -2526,8 +2526,8 @@ Thanks!
     'id' => 48617709,
     'number' => 393,
     'title' => 'Mocking finfo under HHVM fails with mockery',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'heiglandreas',
       'id' => 91998,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/91998?v=3',
@@ -2546,10 +2546,10 @@ Thanks!
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 27369710,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/internals',
         'name' => 'internals',
@@ -2559,15 +2559,15 @@ Thanks!
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2014-11-13T10:00:32Z',
     'updated_at' => '2015-02-14T12:38:09Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'When using `Mockery::mock(\'\\finfo\');` hhvm fails with the following message: 
 
 ```
@@ -2583,8 +2583,8 @@ The test does nothing else than to call `Mockery::mock(\'\\finfo\'):`.
 I\'ll be working around that by using phpunits mocking-framework, but that\'s not really a solution....
 ',
   ),
-  35 => 
-  array (
+  35 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/389',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/389/labels{/name}',
@@ -2594,8 +2594,8 @@ I\'ll be working around that by using phpunits mocking-framework, but that\'s no
     'id' => 47506167,
     'number' => 389,
     'title' => 'The repository is corrupted',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'galaxy4public',
       'id' => 8364154,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/8364154?v=3',
@@ -2614,10 +2614,10 @@ I\'ll be working around that by using phpunits mocking-framework, but that\'s no
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 27369710,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/internals',
         'name' => 'internals',
@@ -2627,15 +2627,15 @@ I\'ll be working around that by using phpunits mocking-framework, but that\'s no
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 2,
     'created_at' => '2014-11-01T13:41:30Z',
     'updated_at' => '2015-02-12T20:10:12Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'There is one commit made in May 2009 that introduced a corrupted tree object into the repository.  This makes it impossible to attach this repository to projects with strict rules on the repository consistence (i.e. which have transfer.fsckObjects set to true) via \'git subtree\'.
 
 The issue can be seen in the following session log (I just merely cloned this repository into a fresh directory, since policies of our repository do not allow broken object to enter the repository).  The first command checks the cloned repository for consistency errors, then I locate the commit that introduced the broken tree object, and finally I do a diff to see that commit (and the file it has altered):
@@ -2682,8 +2682,8 @@ This bug is to make people aware that pulling from this repository "infects" the
 P.S. Personally, I had to clone the repository and fix the issue in my copy, then use my copy as upstream for our project.  But it\'s really painful to do further updates since each time I need to get updates I need to jump through hoops to achieve it :(.
 ',
   ),
-  36 => 
-  array (
+  36 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/377',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/377/labels{/name}',
@@ -2693,8 +2693,8 @@ P.S. Personally, I had to clone the repository and fix the issue in my copy, the
     'id' => 43679272,
     'number' => 377,
     'title' => '[WIP] Fixes compatibility with HHVM',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'Ocramius',
       'id' => 154256,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/154256?v=3',
@@ -2713,22 +2713,22 @@ P.S. Personally, I had to clone the repository and fix the issue in my copy, the
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
+    'labels' =>
+    array(
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 11,
     'created_at' => '2014-09-23T20:26:08Z',
     'updated_at' => '2015-02-14T22:25:30Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/377',
       'html_url' => 'https://github.com/mockery/mockery/pull/377',
       'diff_url' => 'https://github.com/mockery/mockery/pull/377.diff',
@@ -2737,8 +2737,8 @@ P.S. Personally, I had to clone the repository and fix the issue in my copy, the
     'body' => 'The Reflection API in HHVM is now stable enough to be used. This PR removes ugly hacks that were causing all but nice bugs with scalar type hints.
 ',
   ),
-  37 => 
-  array (
+  37 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/305',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/305/labels{/name}',
@@ -2748,8 +2748,8 @@ P.S. Personally, I had to clone the repository and fix the issue in my copy, the
     'id' => 30466133,
     'number' => 305,
     'title' => 'Unable to mock PDO',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'jasonlewis',
       'id' => 829059,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/829059?v=3',
@@ -2768,26 +2768,26 @@ P.S. Personally, I had to clone the repository and fix the issue in my copy, the
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
         'color' => 'e10c02',
         'default' => true,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      2 => 
-      array (
+      2 =>
+      array(
         'id' => 598483998,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/investigate',
         'name' => 'investigate',
@@ -2797,15 +2797,15 @@ P.S. Personally, I had to clone the repository and fix the issue in my copy, the
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 10,
     'created_at' => '2014-03-30T14:25:20Z',
     'updated_at' => '2017-05-09T05:19:44Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'When trying to mock PDO the following exception is thrown:
 
 > PDOException: You cannot serialize or unserialize PDO instances
@@ -2831,8 +2831,8 @@ Any other suggestions for mocking PDO or is this a bug?
 Cheers.
 ',
   ),
-  38 => 
-  array (
+  38 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/301',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/301/labels{/name}',
@@ -2842,8 +2842,8 @@ Cheers.
     'id' => 29781057,
     'number' => 301,
     'title' => 'optional argument matcher',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'VladaHejda',
       'id' => 1905964,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/1905964?v=3',
@@ -2862,26 +2862,26 @@ Cheers.
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
         'color' => '006b75',
         'default' => false,
       ),
-      2 => 
-      array (
+      2 =>
+      array(
         'id' => 598483044,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/waiting%20for%20feedback',
         'name' => 'waiting for feedback',
@@ -2891,15 +2891,15 @@ Cheers.
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 5,
     'created_at' => '2014-03-19T23:06:31Z',
     'updated_at' => '2017-05-09T05:24:52Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I want to suggest something like **OPTIONAL Matcher**, that will accept calling mocked method both with the optional argument and without it.
 
 My code calls some method, sometimes with an optional argument, sometimes not:
@@ -2935,8 +2935,8 @@ $mock->shouldReceive(\'method\')
 _I found [similar issue](https://github.com/padraic/mockery/issues/167), but it requires slightly different behavior._
 ',
   ),
-  39 => 
-  array (
+  39 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/268',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/268/labels{/name}',
@@ -2946,8 +2946,8 @@ _I found [similar issue](https://github.com/padraic/mockery/issues/167), but it 
     'id' => 27033435,
     'number' => 268,
     'title' => 'Internal error when using --static-backup',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'david0',
       'id' => 1685610,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/1685610?v=3',
@@ -2966,18 +2966,18 @@ _I found [similar issue](https://github.com/padraic/mockery/issues/167), but it 
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -2987,15 +2987,15 @@ _I found [similar issue](https://github.com/padraic/mockery/issues/167), but it 
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 5,
     'created_at' => '2014-02-06T08:32:17Z',
     'updated_at' => '2017-05-09T07:16:20Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Currently its not possible to using ̀PHPUnit\'s `--static-backup`/`backupStaticAttributes="true"` with Mockery, since this will lead to some fatal errors:
 
 ```
@@ -3012,8 +3012,8 @@ PHP Fatal error:  ReflectionMethod::isPublic(): Internal error: Failed to retrie
 Testet with mockery\'s testsuite (HEAD), PHP 5.3.14 on Linux
 ',
   ),
-  40 => 
-  array (
+  40 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/264',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/264/labels{/name}',
@@ -3023,8 +3023,8 @@ Testet with mockery\'s testsuite (HEAD), PHP 5.3.14 on Linux
     'id' => 26766408,
     'number' => 264,
     'title' => 'Allow setting exception message for `InvalidCountException` exception',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'aik099',
       'id' => 1277526,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/1277526?v=3',
@@ -3043,18 +3043,18 @@ Testet with mockery\'s testsuite (HEAD), PHP 5.3.14 on Linux
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -3064,15 +3064,15 @@ Testet with mockery\'s testsuite (HEAD), PHP 5.3.14 on Linux
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 7,
     'created_at' => '2014-02-02T18:32:24Z',
     'updated_at' => '2017-05-09T05:30:24Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I like use `->once()`, `->twice()`, `->times()` and other methods that validate how much times a method should be called a lot.
 
 The error I\'m getting on failed expectation usually looks like this: `Method stop() from Mockery_2_Behat_Mink_Session should be called`. It looks good for a generic error, but it doesn\'t really explain what\'s wrong with calling code.
@@ -3080,8 +3080,8 @@ The error I\'m getting on failed expectation usually looks like this: `Method st
 I\'m proposing to develop a way to pass optional exception message to be used instead of generic one if an expectation fails. Like with `->assertEquals(..., ..., $message)` - you can pass a message if you wish, but when not passed the generic is used.
 ',
   ),
-  41 => 
-  array (
+  41 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/249',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/249/labels{/name}',
@@ -3091,8 +3091,8 @@ I\'m proposing to develop a way to pass optional exception message to be used in
     'id' => 25802318,
     'number' => 249,
     'title' => 'Assertion count should not include stubs',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -3111,26 +3111,26 @@ I\'m proposing to develop a way to pass optional exception message to be used in
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 27369710,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/internals',
         'name' => 'internals',
         'color' => 'ededed',
         'default' => false,
       ),
-      2 => 
-      array (
+      2 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -3140,8 +3140,8 @@ I\'m proposing to develop a way to pass optional exception message to be used in
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => 
-    array (
+    'assignee' =>
+    array(
       'login' => 'davedevelopment',
       'id' => 61351,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -3160,10 +3160,10 @@ I\'m proposing to develop a way to pass optional exception message to be used in
       'type' => 'User',
       'site_admin' => false,
     ),
-    'assignees' => 
-    array (
-      0 => 
-      array (
+    'assignees' =>
+    array(
+      0 =>
+      array(
         'login' => 'davedevelopment',
         'id' => 61351,
         'avatar_url' => 'https://avatars3.githubusercontent.com/u/61351?v=3',
@@ -3183,18 +3183,18 @@ I\'m proposing to develop a way to pass optional exception message to be used in
         'site_admin' => false,
       ),
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 13,
     'created_at' => '2014-01-17T11:36:10Z',
     'updated_at' => '2017-05-09T05:31:41Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Currently, stub expectations (zeroOrMoreTimes) are counted as assertions when using the PHPUnit plugin, I\'d vote to exclude them and only count actual count expectations.
 
 Thoughts?
 ',
   ),
-  42 => 
-  array (
+  42 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/243',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/243/labels{/name}',
@@ -3204,8 +3204,8 @@ Thoughts?
     'id' => 25640594,
     'number' => 243,
     'title' => 'Parse error: syntax error, unexpected \'\\\'',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'rikless',
       'id' => 2073369,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/2073369?v=3',
@@ -3224,10 +3224,10 @@ Thoughts?
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
@@ -3237,15 +3237,15 @@ Thoughts?
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 12,
     'created_at' => '2014-01-15T11:19:32Z',
     'updated_at' => '2016-08-25T10:13:54Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I was using Mockery "mockery/mockery": "dev-master@dev", and after last composer update, all tests break with this message : 
 
 ```
@@ -3272,8 +3272,8 @@ https://gist.github.com/anonymous/9531edc5c447f0cbac08#file-mackery
 Moving to stable release fix the issue.
 ',
   ),
-  43 => 
-  array (
+  43 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/218',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/218/labels{/name}',
@@ -3283,8 +3283,8 @@ Moving to stable release fix the issue.
     'id' => 22382907,
     'number' => 218,
     'title' => 'Fixed #215  if we overriding constructor, we override original destructor too',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'lislon',
       'id' => 5708360,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/5708360?v=3',
@@ -3303,10 +3303,10 @@ Moving to stable release fix the issue.
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -3316,17 +3316,17 @@ Moving to stable release fix the issue.
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 9,
     'created_at' => '2013-11-09T09:12:10Z',
     'updated_at' => '2015-02-17T13:24:11Z',
-    'closed_at' => NULL,
-    'pull_request' => 
-    array (
+    'closed_at' => null,
+    'pull_request' =>
+    array(
       'url' => 'https://api.github.com/repos/mockery/mockery/pulls/218',
       'html_url' => 'https://github.com/mockery/mockery/pull/218',
       'diff_url' => 'https://github.com/mockery/mockery/pull/218.diff',
@@ -3334,8 +3334,8 @@ Moving to stable release fix the issue.
     ),
     'body' => '',
   ),
-  44 => 
-  array (
+  44 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/208',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/208/labels{/name}',
@@ -3345,8 +3345,8 @@ Moving to stable release fix the issue.
     'id' => 20193748,
     'number' => 208,
     'title' => 'Setting a non-default expectation overrides all default expectations',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'brandonkelly',
       'id' => 47792,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/47792?v=3',
@@ -3365,26 +3365,26 @@ Moving to stable release fix the issue.
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 24540849,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/blocker',
         'name' => 'blocker',
         'color' => 'e102d8',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
         'color' => 'e10c02',
         'default' => true,
       ),
-      2 => 
-      array (
+      2 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -3394,15 +3394,15 @@ Moving to stable release fix the issue.
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 2,
     'created_at' => '2013-09-27T20:40:33Z',
     'updated_at' => '2017-05-09T05:33:56Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'If you set a single non-default expectation, ExpectationDirector::findExpectation() won\'t even bother checking the default ones:
 
 ```
@@ -3432,8 +3432,8 @@ public function findExpectation(array $args)
 ```
 ',
   ),
-  45 => 
-  array (
+  45 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/181',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/181/labels{/name}',
@@ -3443,8 +3443,8 @@ public function findExpectation(array $args)
     'id' => 16465754,
     'number' => 181,
     'title' => 'Expectations not inherited on "new static()"',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'aik099',
       'id' => 1277526,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/1277526?v=3',
@@ -3463,18 +3463,18 @@ public function findExpectation(array $args)
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 24540849,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/blocker',
         'name' => 'blocker',
         'color' => 'e102d8',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
@@ -3484,15 +3484,15 @@ public function findExpectation(array $args)
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 3,
     'created_at' => '2013-07-08T11:06:36Z',
     'updated_at' => '2015-04-23T11:04:38Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => '``` php
 // mocked class
 class MockMe
@@ -3523,8 +3523,8 @@ Problem comes from `new static()` construct, that creates new mocked class witho
 It would be great to have expectations imported same way, as it\'s done for alias or overload mocking.
 ',
   ),
-  46 => 
-  array (
+  46 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/153',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/153/labels{/name}',
@@ -3534,8 +3534,8 @@ It would be great to have expectations imported same way, as it\'s done for alia
     'id' => 13799444,
     'number' => 153,
     'title' => 'no usefull error message in case an excpetion occurs while generating a half usefull error message ;-)',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'mschirmacher',
       'id' => 298151,
       'avatar_url' => 'https://avatars0.githubusercontent.com/u/298151?v=3',
@@ -3554,18 +3554,18 @@ It would be great to have expectations imported same way, as it\'s done for alia
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
         'color' => 'e10c02',
         'default' => true,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -3575,23 +3575,23 @@ It would be great to have expectations imported same way, as it\'s done for alia
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 5,
     'created_at' => '2013-04-30T09:54:49Z',
     'updated_at' => '2015-02-15T21:24:12Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'In case the tesed code calls a method on a mock without matching arguments this check fails: https://github.com/padraic/mockery/blob/master/library/Mockery/ExpectationDirector.php#L92 
 so finally \\Mockery::formatObjects($args) will be called in https://github.com/padraic/mockery/blob/master/library/Mockery/ExpectationDirector.php#L100
 
 Our problem was, that the formatObjects resulted in an expection rendering the intended error handling useless. This situation should be handled properly
 ',
   ),
-  47 => 
-  array (
+  47 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/122',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/122/labels{/name}',
@@ -3601,8 +3601,8 @@ Our problem was, that the formatObjects resulted in an expection rendering the i
     'id' => 10746385,
     'number' => 122,
     'title' => 'Mocking SplFileInfo & SplFileObject',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'everzet',
       'id' => 30813,
       'avatar_url' => 'https://avatars2.githubusercontent.com/u/30813?v=3',
@@ -3621,18 +3621,18 @@ Our problem was, that the formatObjects resulted in an expection rendering the i
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 24540849,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/blocker',
         'name' => 'blocker',
         'color' => 'e102d8',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 90999,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/bug',
         'name' => 'bug',
@@ -3642,22 +3642,22 @@ Our problem was, that the formatObjects resulted in an expection rendering the i
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 2,
     'created_at' => '2013-02-07T17:18:59Z',
     'updated_at' => '2013-02-07T18:38:25Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Right now it\'s impossible to mock any class, which extends from `SplFileInfo` (including `SplFileObject`). Mostly because `SplFileInfo` is crazy part of php internal. First, it has publicly available private API method (starting with `_`), which Mockery tries to mock, but it\'s actually final. Second, it forces you to call parent class constructor during mock initialisation or you\'ll get FATAL.
 
 Though it is a language limitation, rather than framework bug, it could be extremely handy to be able to mock internal php classes like those.
 ',
   ),
-  48 => 
-  array (
+  48 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/63',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/63/labels{/name}',
@@ -3667,8 +3667,8 @@ Though it is a language limitation, rather than framework bug, it could be extre
     'id' => 4764071,
     'number' => 63,
     'title' => 'How to mock an iterator?',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'zombor',
       'id' => 170538,
       'avatar_url' => 'https://avatars3.githubusercontent.com/u/170538?v=3',
@@ -3687,26 +3687,26 @@ Though it is a language limitation, rather than framework bug, it could be extre
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91001,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/documentation',
         'name' => 'documentation',
         'color' => '02d7e1',
         'default' => false,
       ),
-      1 => 
-      array (
+      1 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
         'color' => '02e10c',
         'default' => false,
       ),
-      2 => 
-      array (
+      2 =>
+      array(
         'id' => 176949671,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/Towards%201.0.0',
         'name' => 'Towards 1.0.0',
@@ -3716,15 +3716,15 @@ Though it is a language limitation, rather than framework bug, it could be extre
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 7,
     'created_at' => '2012-05-26T04:01:20Z',
     'updated_at' => '2017-05-09T05:58:00Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'I\'ve got a class that implements the iterator interface. It implements, next, rewind, etc.
 
 I\'ve got the following code to try and mock it:
@@ -3742,8 +3742,8 @@ I want it to run 5 times. When I do `foreach ($db_iterator as $row)` it doesn\'t
 What\'s the proper way to do this?
 ',
   ),
-  49 => 
-  array (
+  49 =>
+  array(
     'url' => 'https://api.github.com/repos/mockery/mockery/issues/39',
     'repository_url' => 'https://api.github.com/repos/mockery/mockery',
     'labels_url' => 'https://api.github.com/repos/mockery/mockery/issues/39/labels{/name}',
@@ -3753,8 +3753,8 @@ What\'s the proper way to do this?
     'id' => 2414044,
     'number' => 39,
     'title' => 'Proxying Objects -Another Gotcha',
-    'user' => 
-    array (
+    'user' =>
+    array(
       'login' => 'royweston',
       'id' => 132904,
       'avatar_url' => 'https://avatars1.githubusercontent.com/u/132904?v=3',
@@ -3773,10 +3773,10 @@ What\'s the proper way to do this?
       'type' => 'User',
       'site_admin' => false,
     ),
-    'labels' => 
-    array (
-      0 => 
-      array (
+    'labels' =>
+    array(
+      0 =>
+      array(
         'id' => 91000,
         'url' => 'https://api.github.com/repos/mockery/mockery/labels/feature%20request',
         'name' => 'feature request',
@@ -3786,15 +3786,15 @@ What\'s the proper way to do this?
     ),
     'state' => 'open',
     'locked' => false,
-    'assignee' => NULL,
-    'assignees' => 
-    array (
+    'assignee' => null,
+    'assignees' =>
+    array(
     ),
-    'milestone' => NULL,
+    'milestone' => null,
     'comments' => 1,
     'created_at' => '2011-12-01T12:32:07Z',
     'updated_at' => '2013-03-11T23:32:03Z',
-    'closed_at' => NULL,
+    'closed_at' => null,
     'body' => 'Came across this style of code. Proxying an object that is used in a \'method_exists\' call breaks the code as the method is not defined on the proxy object. A simple but not so straight forward answer would be to change all the code to use type hinting.
 
 ``` php
