@@ -21,7 +21,7 @@ class IssuesTest extends TestCase
         $this->params = [
             $this->project->user(),
             $this->project->repo(),
-            ['state' => 'all']
+            ['state' => 'open']
         ];
 
         $this->apiResponse = include __DIR__ . '/../fixtures/issues_mockery_all.php';

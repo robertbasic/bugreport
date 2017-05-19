@@ -26,7 +26,6 @@ class StatsTest extends TestCase
         $stats = new Stats($this->issues);
 
         $this->assertSame(41, $stats->openIssues());
-        $this->assertSame(0, $stats->closedIssues());
         $this->assertSame(9, $stats->pullRequests());
     }
 

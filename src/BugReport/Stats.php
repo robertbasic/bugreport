@@ -19,11 +19,6 @@ class Stats
     /**
      * @var int
      */
-    private $closedIssues = 0;
-
-    /**
-     * @var int
-     */
     private $openPullRequests = 0;
 
     /**
@@ -69,8 +64,6 @@ class Stats
                 $this->findNewestOpenIssue($ageOfIssue);
 
                 $this->openIssues++;
-            } else {
-                $this->closedIssues++;
             }
         }
 
@@ -81,11 +74,6 @@ class Stats
     public function openIssues() : int
     {
         return $this->openIssues;
-    }
-
-    public function closedIssues() : int
-    {
-        return $this->closedIssues;
     }
 
     public function pullRequests() : int

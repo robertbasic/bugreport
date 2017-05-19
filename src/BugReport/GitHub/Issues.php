@@ -11,7 +11,7 @@ class Issues
 {
     const API_METHOD = 'all';
 
-    const STATE = 'all';
+    const STATE = 'open';
 
     /**
      * @var Project

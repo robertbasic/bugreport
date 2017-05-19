@@ -53,7 +53,6 @@ class BugReport extends Command
         $stats = new Stats($issues);
 
         $output->writeln("Open issues: " . $stats->openIssues());
-        $output->writeln("Closed issues: " . $stats->closedIssues());
         $output->writeln("Open pull requests: " . $stats->pullRequests());
         $output->writeln("Oldest open issue: " . $stats->oldestOpenIssue() . " days");
         $output->writeln("Newest open issue: " . $stats->newestOpenIssue() . " days");

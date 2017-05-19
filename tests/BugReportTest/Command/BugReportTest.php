@@ -79,7 +79,7 @@ class BugReportTest extends TestCase
         $params = [
             'mockery',
             'mockery',
-            ['state' => 'all'],
+            ['state' => 'open'],
         ];
 
         $issues = include __DIR__ . '/../fixtures/issues_mockery_all.php';
