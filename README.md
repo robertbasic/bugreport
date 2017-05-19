@@ -8,7 +8,7 @@ Looks at a GitHub repository and reports on:
 
  - number of open issues (done),
  - number of closed issues (done),
- - average age of open issues,
+ - average age of open issues (done),
  - age of oldest open issue,
  - age of newest open issue,
  - number of open pull requests (done),

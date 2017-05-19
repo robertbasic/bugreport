@@ -33,6 +33,16 @@ class StatsTest extends TestCase
     /**
      * @test
      */
+    public function it_calculates_average_age_for_open_issues()
+    {
+        $stats = new Stats($this->issues);
+
+        $this->assertSame(621, $stats->openIssuesAverageAge());
+    }
+
+    /**
+     * @test
+     */
     public function it_calculates_average_age_for_open_pull_requests()
     {
         $stats = new Stats($this->issues);

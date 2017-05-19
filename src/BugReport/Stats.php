@@ -29,11 +29,17 @@ class Stats
     /**
      * @var int
      */
+    private $openIssuesAverageAge = 0;
+
+    /**
+     * @var int
+     */
     private $openPullRequestsAverageAge = 0;
 
     public function __construct(array $issues)
     {
         $pullRequestsOpenForDays = 0;
+        $issuesOpenForDays = 0;
 
         $timezone = new \DateTimeZone('UTC');
         $now = new \DateTime('now', $timezone);
@@ -44,12 +50,15 @@ class Stats
 
                 $this->openPullRequests++;
             } elseif ($this->isOpen($issue)) {
+                $issuesOpenForDays += $this->openForDays($issue, $now);
+
                 $this->openIssues++;
             } else {
                 $this->closedIssues++;
             }
         }
 
+        $this->openIssuesAverageAge = (int) ceil($issuesOpenForDays / $this->openIssues);
         $this->pullRequestsAverageAge = (int) ceil($pullRequestsOpenForDays / $this->openPullRequests);
     }
 
@@ -66,6 +75,11 @@ class Stats
     public function pullRequests() : int
     {
         return $this->openPullRequests;
+    }
+
+    public function openIssuesAverageAge() : int
+    {
+        return $this->openIssuesAverageAge;
     }
 
     public function pullRequestsAverageAge() : int

@@ -53,9 +53,10 @@ class BugReport extends Command
         $stats = new Stats($issues);
 
         $output->writeln("Project: " . $project->url());
-        $output->writeln("Open stats: " . $stats->openIssues());
-        $output->writeln("Closed stats: " . $stats->closedIssues());
+        $output->writeln("Open issues: " . $stats->openIssues());
+        $output->writeln("Closed issues: " . $stats->closedIssues());
         $output->writeln("Open pull requests: " . $stats->pullRequests());
+        $output->writeln("Average age of open issues: " . $stats->openIssuesAverageAge());
         $output->writeln("Average age of open pull requests: " . $stats->pullRequestsAverageAge());
     }
 }
