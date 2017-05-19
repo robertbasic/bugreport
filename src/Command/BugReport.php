@@ -85,7 +85,7 @@ class BugReport extends Command
 
         $output->writeln('Getting bugreport for ' . $installedDependencies->total() . ' installed dependencies');
 
-        foreach ($installedDependencies as $dependency) {
+        foreach ($installedDependencies->all() as $dependency) {
             $this->handleProjectDependency($dependency, $output);
         }
     }

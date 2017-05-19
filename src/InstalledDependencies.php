@@ -18,6 +18,11 @@ class InstalledDependencies
      */
     private $totalDependencies = 0;
 
+    /**
+     * @var Project[]
+     */
+    private $projects = [];
+
     private function __construct(string $lockfile)
     {
         $this->lockfile = $lockfile;
@@ -28,6 +33,11 @@ class InstalledDependencies
         Assert::fileExists($lockfile);
 
         return new self($lockfile);
+    }
+
+    public function all() : array
+    {
+        return $this->projects;
     }
 
     public function total() : int
