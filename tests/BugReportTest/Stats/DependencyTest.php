@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReportTest;
+namespace BugReportTest\Stats;
 
-use BugReport\Stats;
+use BugReport\Stats\Dependency;
 use PHPUnit\Framework\TestCase;
 
-class StatsTest extends TestCase
+class DependencyTest extends TestCase
 {
     /**
      * @var Issues
@@ -20,7 +20,7 @@ class StatsTest extends TestCase
 
     public function setup()
     {
-        $this->issues = include __DIR__ . '/fixtures/issues_mockery_all.php';
+        $this->issues = include __DIR__ . '/../fixtures/issues_mockery_all.php';
         $this->since = new \DateTimeImmutable('2017-05-19 09:00:00Z', new \DateTimeZone('UTC'));
     }
 
@@ -29,7 +29,7 @@ class StatsTest extends TestCase
      */
     public function it_counts_issues()
     {
-        $stats = new Stats($this->issues, $this->since);
+        $stats = new Dependency($this->issues, $this->since);
 
         $this->assertSame(41, $stats->openIssues());
         $this->assertSame(9, $stats->pullRequests());
@@ -40,7 +40,7 @@ class StatsTest extends TestCase
      */
     public function it_calculates_age_of_oldest_open_issues()
     {
-        $stats = new Stats($this->issues, $this->since);
+        $stats = new Dependency($this->issues, $this->since);
 
         $this->assertSame(1995, $stats->oldestOpenIssue());
     }
@@ -50,7 +50,7 @@ class StatsTest extends TestCase
      */
     public function it_calculates_age_of_newest_open_issues()
     {
-        $stats = new Stats($this->issues, $this->since);
+        $stats = new Dependency($this->issues, $this->since);
 
         $this->assertSame(4, $stats->newestOpenIssue());
     }
@@ -60,7 +60,7 @@ class StatsTest extends TestCase
      */
     public function it_calculates_average_age_for_open_issues()
     {
-        $stats = new Stats($this->issues, $this->since);
+        $stats = new Dependency($this->issues, $this->since);
 
         $this->assertSame(621, $stats->openIssuesAverageAge());
     }
@@ -70,7 +70,7 @@ class StatsTest extends TestCase
      */
     public function it_calculates_average_age_for_open_pull_requests()
     {
-        $stats = new Stats($this->issues, $this->since);
+        $stats = new Dependency($this->issues, $this->since);
 
         $this->assertSame(330, $stats->pullRequestsAverageAge());
     }

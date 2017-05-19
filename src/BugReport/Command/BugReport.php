@@ -5,7 +5,7 @@ namespace BugReport\Command;
 
 use BugReport\GitHub\Issues;
 use BugReport\Project;
-use BugReport\Stats;
+use BugReport\Stats\Dependency as DependencyStats;
 use Github\Client;
 use Github\ResultPager;
 use Github\ResultPagerInterface;
@@ -50,7 +50,7 @@ class BugReport extends Command
         $output->writeln('Getting bugreport for ' . $project->url());
 
         $issues = (new Issues($project, $this->pager, $this->issueApi))->fetch();
-        $stats = new Stats($issues);
+        $stats = new DependencyStats($issues);
 
         $output->writeln("Open issues: " . $stats->openIssues());
         $output->writeln("Open pull requests: " . $stats->pullRequests());

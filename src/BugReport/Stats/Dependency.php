@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReport;
+namespace BugReport\Stats;
 
 use Github\Api\ApiInterface;
 use Github\Client;
 use Github\ResultPagerInterface;
 
-class Stats
+class Dependency
 {
     const OPEN_STATE = 'open';
 
