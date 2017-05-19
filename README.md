@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/robertbasic/bugreport.png?branch=master)](https://travis-ci.org/robertbasic/bugreport)
-
 # bugreport
+
+[![Build Status](https://travis-ci.org/robertbasic/bugreport.png?branch=master)](https://travis-ci.org/robertbasic/bugreport)
 
 Get a bug report on a project's dependencies.
 
@@ -12,7 +12,7 @@ Looks at a GitHub repository and reports on:
  - age of oldest open issue,
  - age of newest open issue,
  - number of open pull requests (done),
- - average age of open pull requests
+ - average age of open pull requests (done),
  - is the project deprecated?
  - did the project move?
 

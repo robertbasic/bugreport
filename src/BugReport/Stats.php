@@ -26,10 +26,22 @@ class Stats
      */
     private $openPullRequests = 0;
 
+    /**
+     * @var int
+     */
+    private $openPullRequestsAverageAge = 0;
+
     public function __construct(array $issues)
     {
+        $pullRequestsOpenForDays = 0;
+
+        $timezone = new \DateTimeZone('UTC');
+        $now = new \DateTime('now', $timezone);
+
         foreach ($issues as $issue) {
             if ($this->isPullRequest($issue) && $this->isOpen($issue)) {
+                $pullRequestsOpenForDays += $this->openForDays($issue, $now);
+
                 $this->openPullRequests++;
             } elseif ($this->isOpen($issue)) {
                 $this->openIssues++;
@@ -37,6 +49,8 @@ class Stats
                 $this->closedIssues++;
             }
         }
+
+        $this->pullRequestsAverageAge = (int) ceil($pullRequestsOpenForDays / $this->openPullRequests);
     }
 
     public function openIssues() : int
@@ -54,13 +68,24 @@ class Stats
         return $this->openPullRequests;
     }
 
-    private function isOpen($issue) : bool
+    public function pullRequestsAverageAge() : int
+    {
+        return $this->pullRequestsAverageAge;
+    }
+
+    private function isOpen(array $issue) : bool
     {
         return isset($issue['state']) && $issue['state'] === self::OPEN_STATE;
     }
 
-    private function isPullRequest($issue) : bool
+    private function isPullRequest(array $issue) : bool
     {
         return isset($issue['pull_request']);
+    }
+
+    private function openForDays(array $issue, \DateTime $now) : int
+    {
+        $createdAt = new \DateTime($issue['created_at'], $now->getTimeZone());
+        return $now->diff($createdAt)->days;
     }
 }
