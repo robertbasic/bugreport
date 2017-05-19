@@ -89,25 +89,6 @@ class BugReportTest extends TestCase
     /**
      * @test
      */
-    public function it_does_not_execute_when_it_cannot_find_a_composer_lock_file()
-    {
-        $this->input->shouldReceive()
-            ->getArgument('dependency')
-            ->once()
-            ->andReturnNull();
-
-        $this->output->shouldReceive()
-            ->writeln(Mockery::pattern('/.* is not a composer.lock file/'))
-            ->once();
-
-        $command = new BugReportTestCommand('bugreport', 'non-existent-path', $this->client, $this->pager);
-
-        $command->execute($this->input, $this->output);
-    }
-
-    /**
-     * @test
-     */
     public function it_executes_for_an_existing_composer_lock_file()
     {
         $this->input->shouldReceive()

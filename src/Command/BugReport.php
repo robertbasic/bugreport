@@ -81,11 +81,6 @@ class BugReport extends Command
 
     protected function handleProjectDependencies(OutputInterface $output)
     {
-        if (!is_file($this->lockfile)) {
-            $output->writeln($this->lockfile . ' is not a composer.lock file');
-            return;
-        }
-
         $installedDependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
 
         $output->writeln('Getting bugreport for ' . $installedDependencies->total() . ' installed dependencies');
