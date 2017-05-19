@@ -18,10 +18,10 @@
         "php-http/guzzle6-adapter": "^1.1"
     },
     "autoload": {
-        "psr-4": { "BugReport\\": "src/BugReport/" }
+        "psr-4": { "BugReport\\": "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "BugReportTest\\": "tests/BugReportTest/" }
+        "psr-4": { "BugReportTest\\": "tests/" }
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1",
