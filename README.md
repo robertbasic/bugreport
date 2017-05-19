@@ -17,14 +17,16 @@ Looks at a GitHub repository and reports on:
 
 ## usage
 
-To check for a single project:
+Running:
 
 ```
-bugreport user/repository
+./bin/bugreport
 ```
 
-or for all of a project's dependencies (not yet implemented):
+will search for a `composer.lock` file in the current directory and go through all the dependencies of the project.
+
+To check for a single project, provide a `user/repository` combination:
 
 ```
-bugreport composer.json
+./bin/bugreport user/repository
 ```

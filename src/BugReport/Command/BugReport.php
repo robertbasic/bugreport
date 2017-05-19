@@ -38,13 +38,32 @@ class BugReport extends Command
         $this->setName('bugreport')
             ->setDescription('Create a bug report.')
             ->setHelp('bugreport user/repo')
-            ->addArgument('dependency', InputArgument::REQUIRED, 'Project dependency or composer.json file');
+            ->addArgument('dependency', InputArgument::OPTIONAL, 'Project dependency or composer.json file');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $dependency = $input->getArgument('dependency');
 
+        if (!is_null($dependency)) {
+            return $this->handleProjectDependency($dependency, $output);
+        }
+
+        $this->handleProjectDependencies($output);
+    }
+
+    protected function handleProjectDependencies(OutputInterface $output)
+    {
+        $lockfile = getcwd() . DIRECTORY_SEPARATOR . 'composer.lock';
+
+        if (!is_file($lockfile)) {
+            $output->writeln('No composer.lock file found in ' . getcwd());
+            return;
+        }
+    }
+
+    protected function handleProjectDependency(string $dependency, OutputInterface $output)
+    {
         $project = Project::fromUserRepo($dependency);
 
         $output->writeln('Getting bugreport for ' . $project->url());
