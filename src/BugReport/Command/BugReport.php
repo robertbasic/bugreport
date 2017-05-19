@@ -56,7 +56,9 @@ class BugReport extends Command
         $output->writeln("Open issues: " . $stats->openIssues());
         $output->writeln("Closed issues: " . $stats->closedIssues());
         $output->writeln("Open pull requests: " . $stats->pullRequests());
-        $output->writeln("Average age of open issues: " . $stats->openIssuesAverageAge());
-        $output->writeln("Average age of open pull requests: " . $stats->pullRequestsAverageAge());
+        $output->writeln("Oldest open issue: " . $stats->oldestOpenIssue() . " days");
+        $output->writeln("Newest open issue: " . $stats->newestOpenIssue() . " days");
+        $output->writeln("Average age of open issues: " . $stats->openIssuesAverageAge() . " days");
+        $output->writeln("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days");
     }
 }

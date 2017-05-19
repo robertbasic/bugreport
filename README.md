@@ -9,8 +9,8 @@ Looks at a GitHub repository and reports on:
  - number of open issues (done),
  - number of closed issues (done),
  - average age of open issues (done),
- - age of oldest open issue,
- - age of newest open issue,
+ - age of oldest open issue (done),
+ - age of newest open issue (done),
  - number of open pull requests (done),
  - average age of open pull requests (done),
  - is the project deprecated?

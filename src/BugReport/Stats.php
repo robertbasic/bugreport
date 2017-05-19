@@ -29,6 +29,16 @@ class Stats
     /**
      * @var int
      */
+    private $ageOfOldestOpenIssue = 0;
+
+    /**
+     * @var int
+     */
+    private $ageOfNewestOpenIssue = 0;
+
+    /**
+     * @var int
+     */
     private $openIssuesAverageAge = 0;
 
     /**
@@ -45,12 +55,18 @@ class Stats
         $now = new \DateTime('now', $timezone);
 
         foreach ($issues as $issue) {
+            $createdAt = new \DateTime($issue['created_at'], $timezone);
+
             if ($this->isPullRequest($issue) && $this->isOpen($issue)) {
-                $pullRequestsOpenForDays += $this->openForDays($issue, $now);
+                $pullRequestsOpenForDays += $this->openForDays($createdAt, $now);
 
                 $this->openPullRequests++;
             } elseif ($this->isOpen($issue)) {
-                $issuesOpenForDays += $this->openForDays($issue, $now);
+                $ageOfIssue = $this->openForDays($createdAt, $now);
+                $issuesOpenForDays += $ageOfIssue;
+
+                $this->findOldestOpenIssue($ageOfIssue);
+                $this->findNewestOpenIssue($ageOfIssue);
 
                 $this->openIssues++;
             } else {
@@ -77,6 +93,16 @@ class Stats
         return $this->openPullRequests;
     }
 
+    public function oldestOpenIssue() : int
+    {
+        return $this->ageOfOldestOpenIssue;
+    }
+
+    public function newestOpenIssue() : int
+    {
+        return $this->ageOfNewestOpenIssue;
+    }
+
     public function openIssuesAverageAge() : int
     {
         return $this->openIssuesAverageAge;
@@ -97,9 +123,22 @@ class Stats
         return isset($issue['pull_request']);
     }
 
-    private function openForDays(array $issue, \DateTime $now) : int
+    private function openForDays(\DateTime $createdAt, \DateTime $now) : int
     {
-        $createdAt = new \DateTime($issue['created_at'], $now->getTimeZone());
         return $now->diff($createdAt)->days;
+    }
+
+    private function findOldestOpenIssue(int $ageOfIssue)
+    {
+        if ($this->ageOfOldestOpenIssue < $ageOfIssue) {
+            $this->ageOfOldestOpenIssue = $ageOfIssue;
+        }
+    }
+
+    private function findNewestOpenIssue(int $ageOfIssue)
+    {
+        if ($this->ageOfNewestOpenIssue === 0 || $this->ageOfNewestOpenIssue > $ageOfIssue) {
+            $this->ageOfNewestOpenIssue = $ageOfIssue;
+        }
     }
 }
