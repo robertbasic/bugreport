@@ -14,11 +14,6 @@ class Issues
     const STATE = 'open';
 
     /**
-     * @var Project
-     */
-    private $project;
-
-    /**
      * @var ResultPagerInterface
      */
     private $pager;
@@ -28,18 +23,17 @@ class Issues
      */
     private $issueApi;
 
-    public function __construct(Project $project, ResultPagerInterface $pager, ApiInterface $issueApi)
+    public function __construct(ResultPagerInterface $pager, ApiInterface $issueApi)
     {
-        $this->project = $project;
         $this->pager = $pager;
         $this->issueApi = $issueApi;
     }
 
-    public function fetch() : array
+    public function fetch(Project $project) : array
     {
         $params = [
-            $this->project->user(),
-            $this->project->repo(),
+            $project->user(),
+            $project->repo(),
             ['state' => self::STATE],
         ];
 

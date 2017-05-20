@@ -38,6 +38,11 @@ class BugReport extends Command
      */
     private $issueApi;
 
+    /**
+     * @var Issues
+     */
+    private $issues;
+
     public function __construct($name = null, string $lockfile = null, Client $client = null, ResultPagerInterface $pager = null)
     {
         parent::__construct($name);
@@ -58,6 +63,8 @@ class BugReport extends Command
         $this->pager = $pager;
 
         $this->issueApi = $this->client->issue();
+
+        $this->issues = new Issues($this->pager, $this->issueApi);
     }
 
     protected function configure()
@@ -96,7 +103,7 @@ class BugReport extends Command
 
         $output->writeln('Getting bugreport for ' . $project->url());
 
-        $issues = (new Issues($project, $this->pager, $this->issueApi))->fetch();
+        $issues = $this->issues->fetch($project);
         $stats = new DependencyStats($issues);
 
         $output->writeln("Open issues: " . $stats->openIssues());

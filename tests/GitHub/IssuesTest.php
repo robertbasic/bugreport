@@ -26,7 +26,7 @@ class IssuesTest extends TestCase
 
         $this->apiResponse = include __DIR__ . '/../fixtures/issues_mockery_all.php';
 
-        $this->issues = new Issues($this->project, $this->pager, $this->api);
+        $this->issues = new Issues($this->pager, $this->api);
     }
 
     /**
@@ -38,7 +38,7 @@ class IssuesTest extends TestCase
             ->fetchAll($this->api, 'all', $this->params)
             ->andReturn($this->apiResponse);
 
-        $result = $this->issues->fetch();
+        $result = $this->issues->fetch($this->project);
 
         $this->assertEquals(50, count($result));
     }
