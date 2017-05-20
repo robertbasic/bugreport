@@ -70,8 +70,13 @@ class Dependency
             }
         }
 
-        $this->openIssuesAverageAge = (int) ceil($issuesOpenForDays / $this->openIssues);
-        $this->pullRequestsAverageAge = (int) ceil($pullRequestsOpenForDays / $this->openPullRequests);
+        if ($this->openIssues > 0) {
+            $this->openIssuesAverageAge = (int) ceil($issuesOpenForDays / $this->openIssues);
+        }
+
+        if ($this->openPullRequests > 0) {
+            $this->openPullRequestsAverageAge = (int) ceil($pullRequestsOpenForDays / $this->openPullRequests);
+        }
     }
 
     public function openIssues() : int
@@ -101,7 +106,7 @@ class Dependency
 
     public function pullRequestsAverageAge() : int
     {
-        return $this->pullRequestsAverageAge;
+        return $this->openPullRequestsAverageAge;
     }
 
     private function isOpen(array $issue) : bool
