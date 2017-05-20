@@ -16,7 +16,6 @@ class User
     private function __construct(string $user)
     {
         Assert::stringNotEmpty($user, "User must be provided!");
-        Assert::alnum($user, "Only letters and numbers are allowed!");
 
         $this->user = $user;
     }

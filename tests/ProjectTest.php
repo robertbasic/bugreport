@@ -52,6 +52,12 @@ class ProjectTest extends TestCase
                 'robertbasic',
                 'bugreport42',
             ],
+            [
+                'robert-basic/bug-report42',
+                'https://github.com/robert-basic/bug-report42',
+                'robert-basic',
+                'bug-report42',
+            ],
         ];
     }
 

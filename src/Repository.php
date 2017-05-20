@@ -16,7 +16,6 @@ class Repository
     private function __construct(string $repository)
     {
         Assert::stringNotEmpty($repository, "Repository must be provided!");
-        Assert::alnum($repository, "Only letters and numbers are allowed!");
 
         $this->repository = $repository;
     }
