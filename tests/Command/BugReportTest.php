@@ -99,6 +99,11 @@ class BugReportTest extends TestCase
         $this->output->shouldReceive()
             ->writeln(Mockery::any());
 
+        $this->pager->shouldReceive()
+            ->fetchAll($this->issueApi, 'all', Mockery::type('array'))
+            ->times(50)
+            ->andReturn([]);
+
         $command = new BugReportTestCommand('bugreport', getcwd() . '/tests/fixtures/composer.lock', $this->client, $this->pager);
 
         $command->execute($this->input, $this->output);
