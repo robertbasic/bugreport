@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace BugReportTest\Service;
 
+use BugReport\Dependency;
 use BugReport\Service\BugReport;
 use BugReport\Service\Config;
+use BugReport\Stats\Dependency as DependencyStats;
 use Github\Api\ApiInterface;
 use Github\Client;
 use Github\ResultPagerInterface;
@@ -55,7 +57,7 @@ class BugReportTest extends TestCase
      */
     public function it_executes_for_a_provided_dependency()
     {
-        $dependency = 'mockery/mockery';
+        $dependency = Dependency::fromUserRepo('mockery/mockery');
 
         $params = [
             'mockery',
@@ -70,27 +72,9 @@ class BugReportTest extends TestCase
             ->once()
             ->andReturn($issues);
 
-        $this->service->handleProjectDependency($dependency);
+        $result = $this->service->handleProjectDependency($dependency);
 
-        $reportLines = $this->service->getReportLines();
-
-        // Assert the first call emptied the report lines
-        $this->assertEmpty($this->service->getReportLines());
-    }
-
-    /**
-     * @test
-     */
-    public function it_executes_for_an_existing_composer_lock_file()
-    {
-        $dependency = getcwd() . '/tests/fixtures/composer.lock';
-
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', Mockery::type('array'))
-            ->times(50)
-            ->andReturn([]);
-
-        $this->service->handleProjectDependencies($dependency);
+        $this->assertInstanceOf(DependencyStats::class, $result);
     }
 
     /**

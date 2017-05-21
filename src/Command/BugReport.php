@@ -3,8 +3,11 @@ declare(strict_types=1);
 
 namespace BugReport\Command;
 
+use BugReport\Dependency;
+use BugReport\InstalledDependencies;
 use BugReport\Service\BugReport as BugReportService;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -44,10 +47,18 @@ class BugReport extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $output->writeln('bugreport v' . BugReportService::VERSION);
+
         $dependency = $input->getArgument('dependency');
 
         if (!is_null($dependency)) {
-            return $this->handleProjectDependency($dependency, $output);
+            $output->writeln('Getting bugreport for ' . $dependency);
+
+            $this->handleProjectDependency($dependency, $output);
+
+            $output->writeln('Done.');
+
+            return;
         }
 
         $this->handleProjectDependencies($output);
@@ -55,15 +66,29 @@ class BugReport extends Command
 
     protected function handleProjectDependencies(OutputInterface $output)
     {
-        $this->bugreport->handleProjectDependencies($this->lockfile);
+        $dependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
 
-        $output->writeln($this->bugreport->getReportLines());
+        $output->writeln('Getting bugreport for ' . $dependencies->total() . ' installed dependencies');
+
+        $progress = new ProgressBar($output, $dependencies->total());
+        $progress->start();
+
+        foreach ($dependencies->all() as $dependency) {
+            $this->handleProjectDependency($dependency, $output);
+
+            $progress->advance();
+        }
+
+        $progress->finish();
+
+        $output->writeln('');
+        $output->writeln('Done.');
     }
 
     protected function handleProjectDependency(string $dependency, OutputInterface $output)
     {
-        $this->bugreport->handleProjectDependency($dependency);
+        $dependency = Dependency::fromUserRepo($dependency);
 
-        $output->writeln($this->bugreport->getReportLines());
+        $this->bugreport->handleProjectDependency($dependency);
     }
 }

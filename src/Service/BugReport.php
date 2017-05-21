@@ -14,6 +14,8 @@ use Github\ResultPagerInterface;
 
 class BugReport
 {
+    const VERSION = '0.0.1-dev';
+
     /**
      * @var Client
      */
@@ -34,11 +36,6 @@ class BugReport
      */
     private $issues;
 
-    /**
-     * @var array
-     */
-    private $reportLines;
-
     public function __construct(Client $client, ResultPagerInterface $pager, Config $config)
     {
         $this->client = $client;
@@ -54,46 +51,10 @@ class BugReport
         $this->issues = new Issues($this->pager, $this->issueApi);
     }
 
-    public function handleProjectDependencies(string $lockfile)
+    public function handleProjectDependency(Dependency $dependency) : DependencyStats
     {
-        $dependencies = InstalledDependencies::fromComposerLockFile($lockfile);
-
-        $this->addReportLine('Getting bugreport for ' . $dependencies->total() . ' installed dependencies');
-
-        foreach ($dependencies->all() as $dependency) {
-            $this->handleProjectDependency($dependency);
-        }
-    }
-
-    public function handleProjectDependency(string $dependency)
-    {
-        $dependency = Dependency::fromUserRepo($dependency);
-
-        $this->addReportLine('Getting bugreport for ' . $dependency->url());
-
         $issues = $this->issues->fetch($dependency);
 
-        $stats = new DependencyStats($issues);
-
-        $this->addReportLine("Open issues: " . $stats->openIssues());
-        $this->addReportLine("Open pull requests: " . $stats->pullRequests());
-        $this->addReportLine("Oldest open issue: " . $stats->oldestOpenIssue() . " days");
-        $this->addReportLine("Newest open issue: " . $stats->newestOpenIssue() . " days");
-        $this->addReportLine("Average age of open issues: " . $stats->openIssuesAverageAge() . " days");
-        $this->addReportLine("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days");
-    }
-
-    public function getReportLines() : array
-    {
-        $lines = $this->reportLines;
-
-        $this->reportLines = [];
-
-        return $lines;
-    }
-
-    private function addReportLine(string $line)
-    {
-        $this->reportLines[] = $line;
+        return new DependencyStats($issues);
     }
 }
