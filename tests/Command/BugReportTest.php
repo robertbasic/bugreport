@@ -3,10 +3,8 @@ declare(strict_types=1);
 
 namespace BugReportTest\Command;
 
+use BugReport\Service\BugReport as BugReportService;
 use BugReport\Command\BugReport;
-use Github\Api\ApiInterface;
-use Github\Client;
-use Github\ResultPagerInterface;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\TestCase;
@@ -28,32 +26,16 @@ class BugReportTest extends TestCase
     private $output;
 
     /**
-     * @var Client
+     * @var BugReportService
      */
-    private $client;
-
-    /**
-     * @var ResultPagerInterface
-     */
-    private $pager;
-
-    /**
-     * @var ApiInterface
-     */
-    private $issueApi;
+    private $service;
 
     public function setup()
     {
         $this->input = Mockery::mock(InputInterface::class);
         $this->output = Mockery::mock(OutputInterface::class);
 
-        $this->client = Mockery::mock(Client::class);
-        $this->pager = Mockery::mock(ResultPagerInterface::class);
-        $this->issueApi = Mockery::mock(ApiInterface::class);
-
-        $this->client->shouldReceive()
-            ->issue()
-            ->andReturn($this->issueApi);
+        $this->service = Mockery::mock(BugReportService::class);
     }
 
     /**
@@ -69,20 +51,14 @@ class BugReportTest extends TestCase
         $this->output->shouldReceive()
             ->writeln(Mockery::any());
 
-        $params = [
-            'mockery',
-            'mockery',
-            ['state' => 'open'],
-        ];
+        $this->service->shouldReceive()
+            ->handleProjectDependency('mockery/mockery')
+            ->once();
+        $this->service->shouldReceive()
+            ->getReportLines()
+            ->once();
 
-        $issues = include __DIR__ . '/../fixtures/issues_mockery_all.php';
-
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', $params)
-            ->once()
-            ->andReturn($issues);
-
-        $command = new BugReportTestCommand('bugreport', null, $this->client, $this->pager);
+        $command = new BugReportTestCommand($this->service);
         $command->execute($this->input, $this->output);
     }
 
@@ -91,6 +67,8 @@ class BugReportTest extends TestCase
      */
     public function it_executes_for_an_existing_composer_lock_file()
     {
+        $lockfile = getcwd() . '/tests/fixtures/composer.lock';
+
         $this->input->shouldReceive()
             ->getArgument('dependency')
             ->once()
@@ -99,13 +77,14 @@ class BugReportTest extends TestCase
         $this->output->shouldReceive()
             ->writeln(Mockery::any());
 
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', Mockery::type('array'))
-            ->times(50)
-            ->andReturn([]);
+        $this->service->shouldReceive()
+            ->handleProjectDependencies($lockfile)
+            ->once();
+        $this->service->shouldReceive()
+            ->getReportLines()
+            ->once();
 
-        $command = new BugReportTestCommand('bugreport', getcwd() . '/tests/fixtures/composer.lock', $this->client, $this->pager);
-
+        $command = new BugReportTestCommand($this->service, null, $lockfile);
         $command->execute($this->input, $this->output);
     }
 }
