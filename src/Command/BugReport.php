@@ -49,6 +49,9 @@ class BugReport extends Command
     {
         $output->writeln('bugreport v' . BugReportService::VERSION);
 
+        $configured = $this->bugreport->isConfigured() ? 'Yes.' : 'No.';
+        $output->writeln('Configuration file loaded? ' . $configured);
+
         $dependency = $input->getArgument('dependency');
 
         if (!is_null($dependency)) {

@@ -118,7 +118,7 @@ class BugReportTest extends TestCase
 
         $this->config->shouldReceive()
             ->hasConfig()
-            ->once()
+            ->twice()
             ->andReturn(true);
 
         $this->config->shouldReceive()
@@ -135,5 +135,7 @@ class BugReportTest extends TestCase
             ->andReturn([]);
 
         $service = new BugReport($this->client, $this->pager, $this->config);
+
+        $this->assertTrue($service->isConfigured());
     }
 }

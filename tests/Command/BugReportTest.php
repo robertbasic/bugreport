@@ -48,6 +48,9 @@ class BugReportTest extends TestCase
 
         $this->service = Mockery::mock(BugReportService::class);
         $this->service->shouldReceive()
+            ->isConfigured()
+            ->once();
+        $this->service->shouldReceive()
             ->saveReport()
             ->once();
     }

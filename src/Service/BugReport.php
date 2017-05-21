@@ -51,6 +51,11 @@ class BugReport
         $this->issues = new Issues($pager, $issueApi);
     }
 
+    public function isConfigured() : bool
+    {
+        return $this->config->hasConfig();
+    }
+
     public function handleProjectDependency(Dependency $dependency)
     {
         $this->addReportHeader($dependency);
