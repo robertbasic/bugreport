@@ -65,7 +65,5 @@ class BugReport extends Command
         $this->bugreport->handleProjectDependency($dependency);
 
         $output->writeln($this->bugreport->getReportLines());
-
-        $output->writeln($this->bugreport->getReportLines());
     }
 }
