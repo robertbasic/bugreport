@@ -1,6 +1,8 @@
 # bugreport
 
 [![Build Status](https://travis-ci.org/robertbasic/bugreport.png?branch=master)](https://travis-ci.org/robertbasic/bugreport)
+[![Latest Stable Version](https://poser.pugx.org/robertbasic/bugreport/v/stable)](https://packagist.org/packages/robertbasic/bugreport)
+[![License](https://poser.pugx.org/robertbasic/bugreport/license)](https://packagist.org/packages/robertbasic/bugreport)
 
 Get a bug report on a project's dependencies.
 
@@ -64,3 +66,26 @@ Once you have the token do the following:
  - add `bugreport.json` to `.gitignore`
  - edit `bugreport.json`, change the value of`github_personal_access_token` to
  your token.
+
+## contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md)
+for details on our code of conduct, and the process for submitting pull requests
+to us.
+
+## versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available,
+see the [tags on this repository](https://github.com/robertbasic/bugreport/tags).
+
+## authors
+
+* **Robert Basic** - [robertbasic](https://github.com/robertbasic)
+
+See also the list of [contributors](https://github.com/robertbasic/bugreport/contributors)
+who participated in this project.
+
+## license
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md)
+file for details.
