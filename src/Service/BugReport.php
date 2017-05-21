@@ -6,6 +6,7 @@ namespace BugReport\Service;
 use BugReport\Dependency;
 use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
+use BugReport\Service\Config;
 use BugReport\Stats\Dependency as DependencyStats;
 use Github\Client;
 use Github\ResultPager;
@@ -38,9 +39,13 @@ class BugReport
      */
     private $reportLines;
 
-    public function __construct(Client $client, ResultPagerInterface $pager)
+    public function __construct(Client $client, ResultPagerInterface $pager, Config $config)
     {
         $this->client = $client;
+
+        if ($config->hasConfig()) {
+            $this->client->authenticate($config->githubPersonalAccessToken(), null, Client::AUTH_HTTP_TOKEN);
+        }
 
         $this->pager = $pager;
 
