@@ -13,3 +13,7 @@
 
 ### Removed
  - N/A
+
+## [0.0.1] - 2017-05-21
+
+First version tagged, no changelog.

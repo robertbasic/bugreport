@@ -17,14 +17,14 @@ Looks at a GitHub repository and reports on:
  - is the project deprecated?
  - did the project move?
 
-Current version is: there is no current version yet.
+Current version is: 0.0.1
 
 ## installation
 
 Install it with composer as a `--dev` dependency:
 
 ```
-composer require --dev robertbasic/bugreport:dev-master
+composer require --dev robertbasic/bugreport:0.0.1
 ```
 
 ## usage
