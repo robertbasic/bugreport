@@ -55,16 +55,16 @@ class BugReport extends Command
             $output->writeln('Getting bugreport for ' . $dependency);
 
             $this->handleProjectDependency($dependency);
-
-            $output->writeln('Done.');
-
-            return;
+        } else {
+            $this->handleProjectDependencies($output);
         }
 
-        $this->handleProjectDependencies($output);
+        $output->writeln('Done generating report.');
+
+        $this->saveReport($output);
     }
 
-    protected function handleProjectDependencies(OutputInterface $output)
+    private function handleProjectDependencies(OutputInterface $output)
     {
         $dependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
 
@@ -82,13 +82,21 @@ class BugReport extends Command
         $progress->finish();
 
         $output->writeln('');
-        $output->writeln('Done.');
     }
 
-    protected function handleProjectDependency(string $dependency)
+    private function handleProjectDependency(string $dependency)
     {
         $dependency = Dependency::fromUserRepo($dependency);
 
         $this->bugreport->handleProjectDependency($dependency);
+    }
+
+    private function saveReport(OutputInterface $output)
+    {
+        $output->writeln('Saving report.');
+
+        $filename = $this->bugreport->saveReport();
+
+        $output->writeln('Report saved as: ' . $filename);
     }
 }
