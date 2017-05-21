@@ -18,6 +18,11 @@ class Config
      */
     private $githubPAT = '';
 
+    /**
+     * @var string
+     */
+    private $bugreportFilename = 'bugreport.txt';
+
     public function __construct(string $configfile)
     {
         if (file_exists($configfile)) {
@@ -37,6 +42,11 @@ class Config
     public function githubPersonalAccessToken() : string
     {
         return $this->githubPAT;
+    }
+
+    public function bugreportFilename() : string
+    {
+        return $this->bugreportFilename;
     }
 
     private function configure(array $config)
