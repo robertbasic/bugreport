@@ -53,21 +53,26 @@ class Dependency
         $issuesOpenForDays = 0;
 
         foreach ($issues as $issue) {
+            if (!$this->isOpen($issue)) {
+                continue;
+            }
+
             $createdAt = new \DateTimeImmutable($issue['created_at'], $timezone);
 
-            if ($this->isPullRequest($issue) && $this->isOpen($issue)) {
-                $pullRequestsOpenForDays += $this->openForDays($createdAt, $since);
+            $age = $this->openForDays($createdAt, $since);
 
+            if ($this->isPullRequest($issue)) {
+                $pullRequestsOpenForDays += $age;
                 $this->openPullRequests++;
-            } elseif ($this->isOpen($issue)) {
-                $ageOfIssue = $this->openForDays($createdAt, $since);
-                $issuesOpenForDays += $ageOfIssue;
-
-                $this->findOldestOpenIssue($ageOfIssue);
-                $this->findNewestOpenIssue($ageOfIssue);
-
-                $this->openIssues++;
+                continue;
             }
+
+            $issuesOpenForDays += $age;
+
+            $this->findOldestOpenIssue($age);
+            $this->findNewestOpenIssue($age);
+
+            $this->openIssues++;
         }
 
         if ($this->openIssues > 0) {

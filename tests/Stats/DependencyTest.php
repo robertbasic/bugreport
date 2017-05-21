@@ -74,4 +74,21 @@ class DependencyTest extends TestCase
 
         $this->assertSame(330, $stats->pullRequestsAverageAge());
     }
+
+    /**
+     * @test
+     */
+    public function it_skips_closed_issues()
+    {
+        $issues = [
+            [
+                // Don't care about the rest
+                'state' => 'closed',
+            ],
+        ];
+
+        $stats = new Dependency($issues, $this->since);
+
+        $this->assertSame(0, $stats->openIssues());
+    }
 }
