@@ -5,7 +5,19 @@ if (PHP_SAPI !== 'cli') {
     echo 'Warning: bugreport may only be invoked from a command line', PHP_EOL;
 }
 
-require_once __DIR__ . '/../vendor/autoload.php';
+$autoloadFound = false;
+foreach ([__DIR__ . '/../../../autoload.php', __DIR__ . '/../vendor/autoload.php'] as $file) {
+    if (file_exists($file)) {
+        $autoloadFound = true;
+        require_once $file;
+        break;
+    }
+}
+
+if (!$autoloadFound) {
+    fwrite(STDERR, 'You need to install bugreport.' . PHP_EOL);
+    exit(1);
+}
 
 use BugReport\Command\BugReport as BugReportCommand;
 use BugReport\Service\BugReport as BugReportService;
