@@ -3,13 +3,7 @@ declare(strict_types=1);
 
 namespace BugReport\Command;
 
-use BugReport\Dependency;
-use BugReport\GitHub\Issues;
-use BugReport\InstalledDependencies;
-use BugReport\Stats\Dependency as DependencyStats;
-use Github\Client;
-use Github\ResultPager;
-use Github\ResultPagerInterface;
+use BugReport\Service\BugReport as BugReportService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,47 +18,20 @@ class BugReport extends Command
     private $lockfile;
 
     /**
-     * @var Client
+     * @var BugReportService
      */
-    private $client;
+    private $bugreport;
 
-    /**
-     * @var ResultPagerInterface
-     */
-    private $pager;
-
-    /**
-     * @var ApiInterface
-     */
-    private $issueApi;
-
-    /**
-     * @var Issues
-     */
-    private $issues;
-
-    public function __construct($name = null, string $lockfile = null, Client $client = null, ResultPagerInterface $pager = null)
+    public function __construct(BugReportService $bugreport, $name = null, string $lockfile = null)
     {
         parent::__construct($name);
+
+        $this->bugreport = $bugreport;
 
         if (!$lockfile) {
             $lockfile = getcwd() . DIRECTORY_SEPARATOR . 'composer.lock';
         }
         $this->lockfile = $lockfile;
-
-        if (!$client) {
-            $client = new Client();
-        }
-        $this->client = $client;
-
-        if (!$pager) {
-            $pager = new ResultPager($this->client);
-        }
-        $this->pager = $pager;
-
-        $this->issueApi = $this->client->issue();
-
-        $this->issues = new Issues($this->pager, $this->issueApi);
     }
 
     protected function configure()
@@ -88,29 +55,26 @@ class BugReport extends Command
 
     protected function handleProjectDependencies(OutputInterface $output)
     {
-        $installedDependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
+        $this->bugreport->handleProjectDependencies($this->lockfile);
 
-        $output->writeln('Getting bugreport for ' . $installedDependencies->total() . ' installed dependencies');
+        /* $output->writeln('Getting bugreport for ' . $installedDependencies->total() . ' installed dependencies'); */
 
-        foreach ($installedDependencies->all() as $dependency) {
-            $this->handleProjectDependency($dependency, $output);
-        }
+        /* foreach ($installedDependencies->all() as $dependency) { */
+        /*     $this->handleProjectDependency($dependency, $output); */
+        /* } */
     }
 
     protected function handleProjectDependency(string $dependency, OutputInterface $output)
     {
-        $dependency = Dependency::fromUserRepo($dependency);
+        $this->bugreport->handleProjectDependency($dependency);
 
-        $output->writeln('Getting bugreport for ' . $dependency->url());
+        /* $output->writeln('Getting bugreport for ' . $dependency->url()); */
 
-        $issues = $this->issues->fetch($dependency);
-        $stats = new DependencyStats($issues);
-
-        $output->writeln("Open issues: " . $stats->openIssues());
-        $output->writeln("Open pull requests: " . $stats->pullRequests());
-        $output->writeln("Oldest open issue: " . $stats->oldestOpenIssue() . " days");
-        $output->writeln("Newest open issue: " . $stats->newestOpenIssue() . " days");
-        $output->writeln("Average age of open issues: " . $stats->openIssuesAverageAge() . " days");
-        $output->writeln("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days");
+        /* $output->writeln("Open issues: " . $stats->openIssues()); */
+        /* $output->writeln("Open pull requests: " . $stats->pullRequests()); */
+        /* $output->writeln("Oldest open issue: " . $stats->oldestOpenIssue() . " days"); */
+        /* $output->writeln("Newest open issue: " . $stats->newestOpenIssue() . " days"); */
+        /* $output->writeln("Average age of open issues: " . $stats->openIssuesAverageAge() . " days"); */
+        /* $output->writeln("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days"); */
     }
 }
