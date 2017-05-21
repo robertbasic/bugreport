@@ -71,8 +71,8 @@ class DependencyTest extends TestCase
             ['robertbasic/'],
             ['/bugreport'],
             ['robertbasic-bugreport'],
-            ['robert.basic/bugreport'],
-            ['robertbasic/bug.report'],
+            ['robert/basic/bugreport'],
+            ['robertbasic/bug/report'],
         ];
     }
 }

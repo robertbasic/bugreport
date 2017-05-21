@@ -27,7 +27,7 @@ class Dependency
 
     public static function fromUserRepo(string $userRepo) : self
     {
-        Assert::regex($userRepo, "/^[a-z0-9-]+\/[a-z0-9-]+$/i");
+        Assert::regex($userRepo, "/^[^\/]+\/[^\/]+$/i");
 
         list($user, $repo) = explode('/', $userRepo);
 
