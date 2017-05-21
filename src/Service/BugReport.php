@@ -14,7 +14,7 @@ use Github\ResultPagerInterface;
 
 class BugReport
 {
-    const VERSION = '0.0.1';
+    const VERSION = '0.0.2-dev';
 
     /**
      * @var Client
