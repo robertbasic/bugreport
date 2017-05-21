@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace BugReportTest\GitHub;
 
 use BugReport\GitHub\Issues;
-use BugReport\Project;
+use BugReport\Dependency;
 use Github\Api\ApiInterface;
 use Github\ResultPagerInterface;
 use Mockery;
@@ -14,13 +14,13 @@ class IssuesTest extends TestCase
 {
     public function setup()
     {
-        $this->project = Project::fromUserRepo('mockery/mockery');
+        $this->dependency = Dependency::fromUserRepo('mockery/mockery');
         $this->pager = Mockery::mock(ResultPagerInterface::class);
         $this->api = Mockery::mock(ApiInterface::class);
 
         $this->params = [
-            $this->project->user(),
-            $this->project->repo(),
+            $this->dependency->user(),
+            $this->dependency->repo(),
             ['state' => 'open']
         ];
 
@@ -38,7 +38,7 @@ class IssuesTest extends TestCase
             ->fetchAll($this->api, 'all', $this->params)
             ->andReturn($this->apiResponse);
 
-        $result = $this->issues->fetch($this->project);
+        $result = $this->issues->fetch($this->dependency);
 
         $this->assertEquals(50, count($result));
     }

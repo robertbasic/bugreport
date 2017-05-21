@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace BugReport\Command;
 
+use BugReport\Dependency;
 use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
-use BugReport\Project;
 use BugReport\Stats\Dependency as DependencyStats;
 use Github\Client;
 use Github\ResultPager;
@@ -99,11 +99,11 @@ class BugReport extends Command
 
     protected function handleProjectDependency(string $dependency, OutputInterface $output)
     {
-        $project = Project::fromUserRepo($dependency);
+        $dependency = Dependency::fromUserRepo($dependency);
 
-        $output->writeln('Getting bugreport for ' . $project->url());
+        $output->writeln('Getting bugreport for ' . $dependency->url());
 
-        $issues = $this->issues->fetch($project);
+        $issues = $this->issues->fetch($dependency);
         $stats = new DependencyStats($issues);
 
         $output->writeln("Open issues: " . $stats->openIssues());

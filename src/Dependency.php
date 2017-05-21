@@ -5,7 +5,7 @@ namespace BugReport;
 
 use Webmozart\Assert\Assert;
 
-class Project
+class Dependency
 {
     const URL = 'https://github.com/%s/%s';
 

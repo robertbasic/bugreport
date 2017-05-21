@@ -3,22 +3,22 @@ declare(strict_types=1);
 
 namespace BugReportTest;
 
-use BugReport\Project;
+use BugReport\Dependency;
 use PHPUnit\Framework\TestCase;
 
-class ProjectTest extends TestCase
+class DependencyTest extends TestCase
 {
     /**
      * @test
      * @dataProvider validUserRepos
      */
-    public function it_creates_a_project_from_user_repo_string($userRepo, $url, $user, $repo)
+    public function it_creates_a_dependency_from_user_repo_string($userRepo, $url, $user, $repo)
     {
-        $project = Project::fromUserRepo($userRepo);
+        $dependency = Dependency::fromUserRepo($userRepo);
 
-        $this->assertSame($url, $project->url());
-        $this->assertSame($user, (string) $project->user());
-        $this->assertSame($repo, (string) $project->repo());
+        $this->assertSame($url, $dependency->url());
+        $this->assertSame($user, (string) $dependency->user());
+        $this->assertSame($repo, (string) $dependency->repo());
     }
 
     /**
@@ -26,9 +26,9 @@ class ProjectTest extends TestCase
      * @expectedException InvalidArgumentException
      * @dataProvider invalidUserRepos
      */
-    public function it_cannot_create_a_project_from_what_does_not_look_like_a_user_repo($userRepo)
+    public function it_cannot_create_a_dependency_from_what_does_not_look_like_a_user_repo($userRepo)
     {
-        Project::fromUserRepo($userRepo);
+        Dependency::fromUserRepo($userRepo);
     }
 
     public function validUserRepos()

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BugReport\GitHub;
 
-use BugReport\Project;
+use BugReport\Dependency;
 use Github\Api\ApiInterface;
 use Github\ResultPagerInterface;
 
@@ -29,11 +29,11 @@ class Issues
         $this->issueApi = $issueApi;
     }
 
-    public function fetch(Project $project) : array
+    public function fetch(Dependency $dependency) : array
     {
         $params = [
-            $project->user(),
-            $project->repo(),
+            $dependency->user(),
+            $dependency->repo(),
             ['state' => self::STATE],
         ];
 

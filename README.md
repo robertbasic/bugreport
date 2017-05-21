@@ -25,7 +25,7 @@ Running:
 
 will search for a `composer.lock` file in the current directory and go through all the dependencies of the project.
 
-To check for a single project, provide a `user/repository` combination:
+To check for a single dependency, provide a `user/repository` combination:
 
 ```
 ./bin/bugreport user/repository
