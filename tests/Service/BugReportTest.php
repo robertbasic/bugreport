@@ -39,6 +39,8 @@ class BugReportTest extends TestCase
         $this->client->shouldReceive()
             ->issue()
             ->andReturn($this->issueApi);
+
+        $this->service = new BugReport($this->client, $this->pager);
     }
 
     /**
@@ -61,8 +63,12 @@ class BugReportTest extends TestCase
             ->once()
             ->andReturn($issues);
 
-        $service = new BugReport($this->client, $this->pager);
-        $service->handleProjectDependency($dependency);
+        $this->service->handleProjectDependency($dependency);
+
+        $reportLines = $this->service->getReportLines();
+
+        // Assert the first call emptied the report lines
+        $this->assertEmpty($this->service->getReportLines());
     }
 
     /**
@@ -77,7 +83,6 @@ class BugReportTest extends TestCase
             ->times(50)
             ->andReturn([]);
 
-        $service = new BugReport($this->client, $this->pager);
-        $service->handleProjectDependencies($dependency);
+        $this->service->handleProjectDependencies($dependency);
     }
 }

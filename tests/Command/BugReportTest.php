@@ -70,7 +70,6 @@ class BugReportTest extends TestCase
         $command = new BugReportTestCommand('bugreport', null, $this->client, $this->pager);
         $command->execute($this->input, $this->output);
     }
-
 }
 
 class BugReportTestCommand extends BugReport

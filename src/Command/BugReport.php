@@ -57,24 +57,15 @@ class BugReport extends Command
     {
         $this->bugreport->handleProjectDependencies($this->lockfile);
 
-        /* $output->writeln('Getting bugreport for ' . $installedDependencies->total() . ' installed dependencies'); */
-
-        /* foreach ($installedDependencies->all() as $dependency) { */
-        /*     $this->handleProjectDependency($dependency, $output); */
-        /* } */
+        $output->writeln($this->bugreport->getReportLines());
     }
 
     protected function handleProjectDependency(string $dependency, OutputInterface $output)
     {
         $this->bugreport->handleProjectDependency($dependency);
 
-        /* $output->writeln('Getting bugreport for ' . $dependency->url()); */
+        $output->writeln($this->bugreport->getReportLines());
 
-        /* $output->writeln("Open issues: " . $stats->openIssues()); */
-        /* $output->writeln("Open pull requests: " . $stats->pullRequests()); */
-        /* $output->writeln("Oldest open issue: " . $stats->oldestOpenIssue() . " days"); */
-        /* $output->writeln("Newest open issue: " . $stats->newestOpenIssue() . " days"); */
-        /* $output->writeln("Average age of open issues: " . $stats->openIssuesAverageAge() . " days"); */
-        /* $output->writeln("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days"); */
+        $output->writeln($this->bugreport->getReportLines());
     }
 }
