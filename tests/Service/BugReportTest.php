@@ -55,7 +55,7 @@ class BugReportTest extends TestCase
     /**
      * @test
      */
-    public function it_executes_for_a_provided_dependency()
+    public function it_handles_a_project_dependency()
     {
         $dependency = Dependency::fromUserRepo('mockery/mockery');
 
@@ -72,9 +72,41 @@ class BugReportTest extends TestCase
             ->once()
             ->andReturn($issues);
 
-        $result = $this->service->handleProjectDependency($dependency);
+        $this->service->handleProjectDependency($dependency);
+    }
 
-        $this->assertInstanceOf(DependencyStats::class, $result);
+    /**
+     * @test
+     */
+    public function it_can_save_the_report_to_a_file()
+    {
+        $dependency = Dependency::fromUserRepo('mockery/mockery');
+
+        $params = [
+            'mockery',
+            'mockery',
+            ['state' => 'open'],
+        ];
+
+        $issues = [];
+
+        $this->pager->shouldReceive()
+            ->fetchAll($this->issueApi, 'all', $params)
+            ->once()
+            ->andReturn($issues);
+
+        $this->config->shouldReceive()
+            ->bugreportFilename()
+            ->once()
+            ->andReturn('test_bugreport.txt');
+
+        $this->service->handleProjectDependency($dependency);
+
+        $filename = $this->service->saveReport();
+
+        $this->assertFileExists($filename);
+
+        unlink($filename);
     }
 
     /**
