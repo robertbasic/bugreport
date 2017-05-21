@@ -10,7 +10,7 @@ class InstalledDependencies
     const TYPE_GIT = 'git';
 
     /**
-     * @var Project[]
+     * @var string[]
      */
     private $projects = [];
 

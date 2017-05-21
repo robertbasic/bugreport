@@ -8,6 +8,7 @@ use BugReport\Dependency;
 use BugReport\Service\BugReport as BugReportService;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,17 +18,17 @@ class BugReportTest extends TestCase
     use MockeryPHPUnitIntegration;
 
     /**
-     * @var InputInterface
+     * @var InputInterface|MockInterface
      */
     private $input;
 
     /**
-     * @var OutputInterface
+     * @var OutputInterface|MockInterface
      */
     private $output;
 
     /**
-     * @var BugReportService
+     * @var BugReportService|MockInterface
      */
     private $service;
 

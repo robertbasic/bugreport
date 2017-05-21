@@ -3,15 +3,47 @@ declare(strict_types=1);
 
 namespace BugReportTest\GitHub;
 
-use BugReport\GitHub\Issues;
 use BugReport\Dependency;
+use BugReport\GitHub\Issues;
 use Github\Api\ApiInterface;
 use Github\ResultPagerInterface;
 use Mockery;
+use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
 
 class IssuesTest extends TestCase
 {
+
+    /**
+     * @var Dependency
+     */
+    private $dependency;
+
+    /**
+     * @var ResultPagerInterface|MockInterface
+     */
+    private $pager;
+
+    /**
+     * @var ApiInterface
+     */
+    private $api;
+
+    /**
+     * @var array
+     */
+    private $params;
+
+    /**
+     * @var array
+     */
+    private $apiResponse;
+
+    /**
+     * @var Issues
+     */
+    private $issues;
+
     public function setup()
     {
         $this->dependency = Dependency::fromUserRepo('mockery/mockery');

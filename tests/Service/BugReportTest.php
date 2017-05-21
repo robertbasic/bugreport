@@ -12,6 +12,7 @@ use Github\Client;
 use Github\ResultPagerInterface;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
 
 class BugReportTest extends TestCase
@@ -19,19 +20,29 @@ class BugReportTest extends TestCase
     use MockeryPHPUnitIntegration;
 
     /**
-     * @var Client
+     * @var Client|MockInterface
      */
     private $client;
 
     /**
-     * @var ResultPagerInterface
+     * @var ResultPagerInterface|MockInterface
      */
     private $pager;
 
     /**
-     * @var ApiInterface
+     * @var ApiInterface|MockInterface
      */
     private $issueApi;
+
+    /**
+     * @var Config|MockInterface
+     */
+    private $config;
+
+    /**
+     * @var BugReport
+     */
+    private $service;
 
     public function setup()
     {

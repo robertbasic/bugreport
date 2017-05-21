@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 class DependencyTest extends TestCase
 {
     /**
-     * @var Issues
+     * @var array
      */
     private $issues;
 
