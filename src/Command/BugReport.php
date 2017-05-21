@@ -54,7 +54,7 @@ class BugReport extends Command
         if (!is_null($dependency)) {
             $output->writeln('Getting bugreport for ' . $dependency);
 
-            $this->handleProjectDependency($dependency, $output);
+            $this->handleProjectDependency($dependency);
 
             $output->writeln('Done.');
 
@@ -74,7 +74,7 @@ class BugReport extends Command
         $progress->start();
 
         foreach ($dependencies->all() as $dependency) {
-            $this->handleProjectDependency($dependency, $output);
+            $this->handleProjectDependency($dependency);
 
             $progress->advance();
         }
@@ -85,7 +85,7 @@ class BugReport extends Command
         $output->writeln('Done.');
     }
 
-    protected function handleProjectDependency(string $dependency, OutputInterface $output)
+    protected function handleProjectDependency(string $dependency)
     {
         $dependency = Dependency::fromUserRepo($dependency);
 
