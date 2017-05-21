@@ -23,10 +23,25 @@ Running:
 ./bin/bugreport
 ```
 
-will search for a `composer.lock` file in the current directory and go through all the dependencies of the project.
+will search for a `composer.lock` file in the current directory and go through
+all the dependencies of the project.
 
 To check for a single dependency, provide a `user/repository` combination:
 
 ```
 ./bin/bugreport user/repository
 ```
+
+## github api rate limit
+
+If you run `bugreport` too much, or against a project with lots of dependencies,
+the github api rate limit might kick in. In that case, you need to create a
+[GitHub personal access token](https://github.com/blog/1509-personal-api-tokens).
+
+The **ONLY** scope `bugreport` requires is `public_repo`, nothing else.
+
+Once you have the token do the following:
+
+ - copy `bugreport.json.dist` to `bugreport.json`
+ - add `bugreport.json` to `.gitignore`
+ - edit `bugreport.json`, change `github-pat-goes-here` to your token.

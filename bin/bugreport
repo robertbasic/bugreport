@@ -9,6 +9,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use BugReport\Command\BugReport as BugReportCommand;
 use BugReport\Service\BugReport as BugReportService;
+use BugReport\Service\Config;
 use Github\Client;
 use Github\ResultPager;
 use Symfony\Component\Console\Application;
@@ -18,7 +19,8 @@ $application = new Application();
 
 $client = new Client();
 $pager = new ResultPager($client);
-$service = new BugReportService($client, $pager);
+$config = new Config(getcwd() . DIRECTORY_SEPARATOR . 'bugreport.json');
+$service = new BugReportService($client, $pager, $config);
 
 $defaultCommand = new BugReportCommand($service);
 

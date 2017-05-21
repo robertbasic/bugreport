@@ -24,7 +24,7 @@ class ConfigTest extends TestCase
      */
     public function it_has_config()
     {
-        $config = new Config(getcwd() . '/tests/fixtures/bugreport.json');
+        $config = new Config(getcwd() . '/tests/fixtures/bugreport_config.json');
 
         $this->assertTrue($config->hasConfig());
         $this->assertSame('github-pat', $config->githubPersonalAccessToken());
