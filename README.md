@@ -17,6 +17,8 @@ Looks at a GitHub repository and reports on:
  - is the project deprecated?
  - did the project move?
 
+Current version is: there is no current version yet.
+
 ## installation
 
 Install it with composer as a `--dev` dependency:
