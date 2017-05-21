@@ -3,8 +3,11 @@ declare(strict_types=1);
 
 namespace BugReport\Command;
 
+use BugReport\Dependency;
+use BugReport\InstalledDependencies;
 use BugReport\Service\BugReport as BugReportService;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -44,26 +47,56 @@ class BugReport extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $output->writeln('bugreport v' . BugReportService::VERSION);
+
         $dependency = $input->getArgument('dependency');
 
         if (!is_null($dependency)) {
-            return $this->handleProjectDependency($dependency, $output);
+            $output->writeln('Getting bugreport for ' . $dependency);
+
+            $this->handleProjectDependency($dependency);
+        } else {
+            $this->handleProjectDependencies($output);
         }
 
-        $this->handleProjectDependencies($output);
+        $output->writeln('Done generating report.');
+
+        $this->saveReport($output);
     }
 
-    protected function handleProjectDependencies(OutputInterface $output)
+    private function handleProjectDependencies(OutputInterface $output)
     {
-        $this->bugreport->handleProjectDependencies($this->lockfile);
+        $dependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
 
-        $output->writeln($this->bugreport->getReportLines());
+        $output->writeln('Getting bugreport for ' . $dependencies->total() . ' installed dependencies');
+
+        $progress = new ProgressBar($output, $dependencies->total());
+        $progress->start();
+
+        foreach ($dependencies->all() as $dependency) {
+            $this->handleProjectDependency($dependency);
+
+            $progress->advance();
+        }
+
+        $progress->finish();
+
+        $output->writeln('');
     }
 
-    protected function handleProjectDependency(string $dependency, OutputInterface $output)
+    private function handleProjectDependency(string $dependency)
     {
+        $dependency = Dependency::fromUserRepo($dependency);
+
         $this->bugreport->handleProjectDependency($dependency);
+    }
 
-        $output->writeln($this->bugreport->getReportLines());
+    private function saveReport(OutputInterface $output)
+    {
+        $output->writeln('Saving report.');
+
+        $filename = $this->bugreport->saveReport();
+
+        $output->writeln('Report saved as: ' . $filename);
     }
 }

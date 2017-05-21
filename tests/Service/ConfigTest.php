@@ -28,5 +28,17 @@ class ConfigTest extends TestCase
 
         $this->assertTrue($config->hasConfig());
         $this->assertSame('github-pat', $config->githubPersonalAccessToken());
+        $this->assertSame('bugreport.txt', $config->bugreportFilename());
+    }
+
+    /**
+     * @test
+     */
+    public function it_has_default_config_for_report_filename()
+    {
+        $config = new Config('non-existent.json');
+
+        $this->assertFalse($config->hasConfig());
+        $this->assertSame('bugreport.txt', $config->bugreportFilename());
     }
 }

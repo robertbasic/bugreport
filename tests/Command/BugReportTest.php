@@ -3,8 +3,9 @@ declare(strict_types=1);
 
 namespace BugReportTest\Command;
 
-use BugReport\Service\BugReport as BugReportService;
 use BugReport\Command\BugReport;
+use BugReport\Dependency;
+use BugReport\Service\BugReport as BugReportService;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\TestCase;
@@ -35,7 +36,20 @@ class BugReportTest extends TestCase
         $this->input = Mockery::mock(InputInterface::class);
         $this->output = Mockery::mock(OutputInterface::class);
 
+        // For the ProgressBar
+        $this->output->shouldReceive()
+            ->isDecorated()
+            ->andReturn(false)
+            ->byDefault();
+        $this->output->shouldReceive()
+            ->getVerbosity()
+            ->andReturn(16) // VERBOSITY_QUIET
+            ->byDefault();
+
         $this->service = Mockery::mock(BugReportService::class);
+        $this->service->shouldReceive()
+            ->saveReport()
+            ->once();
     }
 
     /**
@@ -52,10 +66,7 @@ class BugReportTest extends TestCase
             ->writeln(Mockery::any());
 
         $this->service->shouldReceive()
-            ->handleProjectDependency('mockery/mockery')
-            ->once();
-        $this->service->shouldReceive()
-            ->getReportLines()
+            ->handleProjectDependency(Mockery::type(Dependency::class))
             ->once();
 
         $command = new BugReportTestCommand($this->service);
@@ -78,11 +89,8 @@ class BugReportTest extends TestCase
             ->writeln(Mockery::any());
 
         $this->service->shouldReceive()
-            ->handleProjectDependencies($lockfile)
-            ->once();
-        $this->service->shouldReceive()
-            ->getReportLines()
-            ->once();
+            ->handleProjectDependency(Mockery::type(Dependency::class))
+            ->times(50);
 
         $command = new BugReportTestCommand($this->service, null, $lockfile);
         $command->execute($this->input, $this->output);

@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace BugReportTest\Service;
 
+use BugReport\Dependency;
 use BugReport\Service\BugReport;
 use BugReport\Service\Config;
+use BugReport\Stats\Dependency as DependencyStats;
 use Github\Api\ApiInterface;
 use Github\Client;
 use Github\ResultPagerInterface;
@@ -53,9 +55,9 @@ class BugReportTest extends TestCase
     /**
      * @test
      */
-    public function it_executes_for_a_provided_dependency()
+    public function it_handles_a_project_dependency()
     {
-        $dependency = 'mockery/mockery';
+        $dependency = Dependency::fromUserRepo('mockery/mockery');
 
         $params = [
             'mockery',
@@ -71,26 +73,40 @@ class BugReportTest extends TestCase
             ->andReturn($issues);
 
         $this->service->handleProjectDependency($dependency);
-
-        $reportLines = $this->service->getReportLines();
-
-        // Assert the first call emptied the report lines
-        $this->assertEmpty($this->service->getReportLines());
     }
 
     /**
      * @test
      */
-    public function it_executes_for_an_existing_composer_lock_file()
+    public function it_can_save_the_report_to_a_file()
     {
-        $dependency = getcwd() . '/tests/fixtures/composer.lock';
+        $dependency = Dependency::fromUserRepo('mockery/mockery');
+
+        $params = [
+            'mockery',
+            'mockery',
+            ['state' => 'open'],
+        ];
+
+        $issues = [];
 
         $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', Mockery::type('array'))
-            ->times(50)
-            ->andReturn([]);
+            ->fetchAll($this->issueApi, 'all', $params)
+            ->once()
+            ->andReturn($issues);
 
-        $this->service->handleProjectDependencies($dependency);
+        $this->config->shouldReceive()
+            ->bugreportFilename()
+            ->once()
+            ->andReturn('test_bugreport.txt');
+
+        $this->service->handleProjectDependency($dependency);
+
+        $filename = $this->service->saveReport();
+
+        $this->assertFileExists($filename);
+
+        unlink($filename);
     }
 
     /**

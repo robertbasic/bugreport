@@ -18,6 +18,11 @@ class Config
      */
     private $githubPAT = '';
 
+    /**
+     * @var string
+     */
+    private $bugreportFilename = 'bugreport.txt';
+
     public function __construct(string $configfile)
     {
         if (file_exists($configfile)) {
@@ -39,9 +44,19 @@ class Config
         return $this->githubPAT;
     }
 
+    public function bugreportFilename() : string
+    {
+        return $this->bugreportFilename;
+    }
+
     private function configure(array $config)
     {
-        Assert::keyExists($config, 'github_personal_access_token');
-        $this->githubPAT = $config['github_personal_access_token'];
+        if (isset($config['github_personal_access_token'])) {
+            $this->githubPAT = $config['github_personal_access_token'];
+        }
+
+        if (isset($config['bugreport_filename'])) {
+            $this->bugreportFilename = $config['bugreport_filename'];
+        }
     }
 }

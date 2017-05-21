@@ -13,7 +13,6 @@ use BugReport\Service\Config;
 use Github\Client;
 use Github\ResultPager;
 use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Input\ArgvInput;
 
 $application = new Application();
 
