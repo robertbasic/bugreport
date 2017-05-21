@@ -51,7 +51,12 @@ class Config
 
     private function configure(array $config)
     {
-        Assert::keyExists($config, 'github_personal_access_token');
-        $this->githubPAT = $config['github_personal_access_token'];
+        if (isset($config['github_personal_access_token'])) {
+            $this->githubPAT = $config['github_personal_access_token'];
+        }
+
+        if (isset($config['bugreport_filename'])) {
+            $this->bugreportFilename = $config['bugreport_filename'];
+        }
     }
 }

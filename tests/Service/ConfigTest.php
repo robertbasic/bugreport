@@ -28,6 +28,7 @@ class ConfigTest extends TestCase
 
         $this->assertTrue($config->hasConfig());
         $this->assertSame('github-pat', $config->githubPersonalAccessToken());
+        $this->assertSame('bugreport.txt', $config->bugreportFilename());
     }
 
     /**

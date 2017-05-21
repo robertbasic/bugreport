@@ -32,6 +32,16 @@ To check for a single dependency, provide a `user/repository` combination:
 ./bin/bugreport user/repository
 ```
 
+## configuration
+
+By default `bugreport` will generate a `bugreport.txt` file in the current
+working directory with the entire report. You can configure that by:
+
+ - copy `bugreport.json.dist` to `bugreport.json`
+ - add `bugreport.json` to `.gitignore`
+ - edit `bugreport.json`, change the value of `bugreport_filename` to the path
+ and filename where you want the report to be saved.
+
 ## github api rate limit
 
 If you run `bugreport` too much, or against a project with lots of dependencies,
@@ -44,4 +54,5 @@ Once you have the token do the following:
 
  - copy `bugreport.json.dist` to `bugreport.json`
  - add `bugreport.json` to `.gitignore`
- - edit `bugreport.json`, change `github-pat-goes-here` to your token.
+ - edit `bugreport.json`, change the value of`github_personal_access_token` to
+ your token.

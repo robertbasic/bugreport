@@ -1,3 +1,4 @@
 {
-    "github_personal_access_token": "github-pat-goes-here"
+    "github_personal_access_token": "github-pat-goes-here",
+    "bugreport_filename": "bugreport.txt"
 }
