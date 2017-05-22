@@ -27,4 +27,9 @@ class Text implements Formatter
 
         return $lines;
     }
+
+    public function extension() : string
+    {
+        return 'txt';
+    }
 }

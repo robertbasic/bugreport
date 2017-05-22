@@ -73,15 +73,23 @@ class BugReport
 
     public function saveReport(Formatter $formatter) : string
     {
-        $filename = $this->config->bugreportFilename();
-
         $report = $formatter->format($this->report);
+
+        $filename = $this->getFilename($formatter);
 
         file_put_contents($filename, $report);
 
         $this->clearReport();
 
         return $filename;
+    }
+
+    private function getFilename(Formatter $formatter) : string
+    {
+        $filename = $this->config->bugreportFilename();
+        $pathinfo = pathinfo($filename);
+
+        return $pathinfo['filename'] . '.' . $formatter->extension();
     }
 
     private function clearReport()
