@@ -42,6 +42,11 @@ class Dependency
         return sprintf(self::URL, $this->user(), $this->repo());
     }
 
+    public function shortUrl() : string
+    {
+        return sprintf('%s/%s', $this->user(), $this->repo());
+    }
+
     public function user() : User
     {
         return $this->user;
