@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace BugReportTest\Stats;
 
-use BugReport\Stats\Dependency;
+use BugReport\Stats\OpenIssues;
 use PHPUnit\Framework\TestCase;
 
-class DependencyTest extends TestCase
+class OpenIssuesTest extends TestCase
 {
     /**
      * @var array
@@ -29,10 +29,10 @@ class DependencyTest extends TestCase
      */
     public function it_counts_issues()
     {
-        $stats = new Dependency($this->issues, $this->since);
+        $openIssues = new OpenIssues($this->issues, $this->since);
 
-        $this->assertSame(41, $stats->openIssues());
-        $this->assertSame(9, $stats->pullRequests());
+        $this->assertSame(41, $openIssues->openIssues());
+        $this->assertSame(9, $openIssues->pullRequests());
     }
 
     /**
@@ -40,9 +40,9 @@ class DependencyTest extends TestCase
      */
     public function it_calculates_age_of_oldest_open_issues()
     {
-        $stats = new Dependency($this->issues, $this->since);
+        $openIssues = new OpenIssues($this->issues, $this->since);
 
-        $this->assertSame(1995, $stats->oldestOpenIssue());
+        $this->assertSame(1995, $openIssues->oldestOpenIssue());
     }
 
     /**
@@ -50,9 +50,9 @@ class DependencyTest extends TestCase
      */
     public function it_calculates_age_of_newest_open_issues()
     {
-        $stats = new Dependency($this->issues, $this->since);
+        $openIssues = new OpenIssues($this->issues, $this->since);
 
-        $this->assertSame(4, $stats->newestOpenIssue());
+        $this->assertSame(4, $openIssues->newestOpenIssue());
     }
 
     /**
@@ -60,9 +60,9 @@ class DependencyTest extends TestCase
      */
     public function it_calculates_average_age_for_open_issues()
     {
-        $stats = new Dependency($this->issues, $this->since);
+        $openIssues = new OpenIssues($this->issues, $this->since);
 
-        $this->assertSame(621, $stats->openIssuesAverageAge());
+        $this->assertSame(621, $openIssues->openIssuesAverageAge());
     }
 
     /**
@@ -70,9 +70,9 @@ class DependencyTest extends TestCase
      */
     public function it_calculates_average_age_for_open_pull_requests()
     {
-        $stats = new Dependency($this->issues, $this->since);
+        $openIssues = new OpenIssues($this->issues, $this->since);
 
-        $this->assertSame(330, $stats->pullRequestsAverageAge());
+        $this->assertSame(330, $openIssues->pullRequestsAverageAge());
     }
 
     /**
@@ -87,8 +87,8 @@ class DependencyTest extends TestCase
             ],
         ];
 
-        $stats = new Dependency($issues, $this->since);
+        $openIssues = new OpenIssues($issues, $this->since);
 
-        $this->assertSame(0, $stats->openIssues());
+        $this->assertSame(0, $openIssues->openIssues());
     }
 }

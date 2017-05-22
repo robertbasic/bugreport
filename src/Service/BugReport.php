@@ -7,7 +7,8 @@ use BugReport\Dependency;
 use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
 use BugReport\Service\Config;
-use BugReport\Stats\Dependency as DependencyStats;
+use BugReport\Stats\OpenIssues;
+use BugReport\Formatter\Formatter;
 use Github\Client;
 use Github\ResultPager;
 use Github\ResultPagerInterface;
@@ -34,7 +35,7 @@ class BugReport
     /**
      * @var array
      */
-    private $reportLines;
+    private $report;
 
     public function __construct(Client $client, ResultPagerInterface $pager, Config $config)
     {
@@ -58,48 +59,41 @@ class BugReport
 
     public function handleProjectDependency(Dependency $dependency)
     {
-        $this->addReportHeader($dependency);
-
         $issues = $this->issues->fetch($dependency);
 
-        $stats = new DependencyStats($issues);
+        $openIssues = new OpenIssues($issues);
 
-        $this->addReportLine("Open issues: " . $stats->openIssues());
-        $this->addReportLine("Open pull requests: " . $stats->pullRequests());
-        $this->addReportLine("Oldest open issue: " . $stats->oldestOpenIssue() . " days");
-        $this->addReportLine("Newest open issue: " . $stats->newestOpenIssue() . " days");
-        $this->addReportLine("Average age of open issues: " . $stats->openIssuesAverageAge() . " days");
-        $this->addReportLine("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days");
+        $line = [
+            'dependency' => $dependency,
+            'open_issues' => $openIssues,
+        ];
+
+        $this->report[] = $line;
     }
 
-    public function saveReport() : string
+    public function saveReport(Formatter $formatter) : string
     {
-        $filename = $this->config->bugreportFilename();
+        $report = $formatter->format($this->report);
 
-        // Add empty line at the end
-        $this->addReportLine("");
+        $filename = $this->getFilename($formatter);
 
-        file_put_contents($filename, implode("\n", $this->reportLines));
+        file_put_contents($filename, $report);
 
-        $this->clearReportLines();
+        $this->clearReport();
 
         return $filename;
     }
 
-    private function clearReportLines()
+    private function getFilename(Formatter $formatter) : string
     {
-        $this->reportLines = [];
+        $filename = $this->config->bugreportFilename();
+        $pathinfo = pathinfo($filename);
+
+        return $pathinfo['filename'] . '.' . $formatter->extension();
     }
 
-    private function addReportLine(string $line)
+    private function clearReport()
     {
-        $this->reportLines[] = $line;
-    }
-
-    private function addReportHeader(Dependency $dependency)
-    {
-        $this->addReportLine(str_repeat('#', 20));
-        $this->addReportLine('bugreport for ' . $dependency->url());
-        $this->addReportLine(str_repeat('#', 20));
+        $this->report = [];
     }
 }

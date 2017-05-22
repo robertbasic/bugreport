@@ -7,7 +7,7 @@ use Github\Api\ApiInterface;
 use Github\Client;
 use Github\ResultPagerInterface;
 
-class Dependency
+class OpenIssues
 {
     const OPEN_STATE = 'open';
 
