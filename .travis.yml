@@ -19,7 +19,7 @@ install:
   - travis_retry composer update --no-interaction
 
 script:
-  - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml
+  - vendor/bin/phpunit --coverage-text --coverage-clover=build/logs/clover.xml
 
 after_success:
   - composer require satooshi/php-coveralls
