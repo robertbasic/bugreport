@@ -71,6 +71,12 @@ Once you have the token do the following:
  - edit `bugreport.json`, change the value of`github_personal_access_token` to
  your token.
 
+## html report
+
+The HTML report looks something like this:
+
+![HTML bugreport](html.png)
+
 ## contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md)
