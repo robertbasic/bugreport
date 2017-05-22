@@ -8,6 +8,8 @@ use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
 use BugReport\Service\Config;
 use BugReport\Stats\Dependency as DependencyStats;
+use BugReport\Writer\Text;
+use BugReport\Writer\Writer;
 use Github\Client;
 use Github\ResultPager;
 use Github\ResultPagerInterface;
@@ -34,7 +36,7 @@ class BugReport
     /**
      * @var array
      */
-    private $reportLines;
+    private $report;
 
     public function __construct(Client $client, ResultPagerInterface $pager, Config $config)
     {
@@ -58,48 +60,36 @@ class BugReport
 
     public function handleProjectDependency(Dependency $dependency)
     {
-        $this->addReportHeader($dependency);
-
         $issues = $this->issues->fetch($dependency);
 
         $stats = new DependencyStats($issues);
 
-        $this->addReportLine("Open issues: " . $stats->openIssues());
-        $this->addReportLine("Open pull requests: " . $stats->pullRequests());
-        $this->addReportLine("Oldest open issue: " . $stats->oldestOpenIssue() . " days");
-        $this->addReportLine("Newest open issue: " . $stats->newestOpenIssue() . " days");
-        $this->addReportLine("Average age of open issues: " . $stats->openIssuesAverageAge() . " days");
-        $this->addReportLine("Average age of open pull requests: " . $stats->pullRequestsAverageAge() . " days");
+        $line = [
+            'dependency' => $dependency,
+            'stats' => $stats,
+        ];
+
+        $this->report[] = $line;
     }
 
     public function saveReport() : string
     {
         $filename = $this->config->bugreportFilename();
 
-        // Add empty line at the end
-        $this->addReportLine("");
-
-        file_put_contents($filename, implode("\n", $this->reportLines));
+        $this->getWriter()->write($this->report, $filename);
 
         $this->clearReportLines();
 
         return $filename;
     }
 
+    private function getWriter() : Writer
+    {
+        return new Text();
+    }
+
     private function clearReportLines()
     {
-        $this->reportLines = [];
-    }
-
-    private function addReportLine(string $line)
-    {
-        $this->reportLines[] = $line;
-    }
-
-    private function addReportHeader(Dependency $dependency)
-    {
-        $this->addReportLine(str_repeat('#', 20));
-        $this->addReportLine('bugreport for ' . $dependency->url());
-        $this->addReportLine(str_repeat('#', 20));
+        $this->report = [];
     }
 }
