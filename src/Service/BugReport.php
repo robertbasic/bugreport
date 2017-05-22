@@ -78,7 +78,7 @@ class BugReport
 
         $this->getWriter()->write($this->report, $filename);
 
-        $this->clearReportLines();
+        $this->clearReport();
 
         return $filename;
     }
@@ -88,7 +88,7 @@ class BugReport
         return new Text();
     }
 
-    private function clearReportLines()
+    private function clearReport()
     {
         $this->report = [];
     }
