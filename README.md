@@ -43,6 +43,9 @@ To check for a single dependency, provide a `user/repository` combination:
 ./bin/bugreport user/repository
 ```
 
+Passing in `--html` as a command line option, will tell `bugreport` to create
+an HTML report, instead of a text one.
+
 ## configuration
 
 By default `bugreport` will generate a `bugreport.txt` file in the current
@@ -82,7 +85,7 @@ see the [tags on this repository](https://github.com/robertbasic/bugreport/tags)
 ## todo
 
  - [ ] interactive configuration
- - [ ] write report as html
+ - [x] write report as html
  - [ ] phar for distribution
  - [ ] is the project deprecated?
  - [ ] did the project move?

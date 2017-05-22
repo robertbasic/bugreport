@@ -3,7 +3,7 @@
 ## [Unreleased] - unreleased
 
 ### Added
- - N/A
+ - `--html` command line option to create an HTML report
 
 ### Changed
  - N/A
