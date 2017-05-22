@@ -14,7 +14,7 @@ class Html implements Formatter
             $openIssues = $line['open_issues'];
 
             $lines .= "<tr>";
-            $lines .= "<td>" . $dependency->url() . "</td>";
+            $lines .= "<td><a href='" . $dependency->url() . "'>" . $dependency->shortUrl() . "</a></td>";
             $lines .= "<td>" . $openIssues->openIssues() . "</td>";
             $lines .= "<td>" . $openIssues->pullRequests() . "</td>";
             $lines .= "<td>" . $openIssues->oldestOpenIssue() . " days</td>";
