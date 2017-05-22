@@ -6,4 +6,6 @@ namespace BugReport\Formatter;
 interface Formatter
 {
     public function format(array $reports) : string;
+
+    public function extension() : string;
 }

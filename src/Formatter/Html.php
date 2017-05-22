@@ -27,6 +27,11 @@ class Html implements Formatter
         return $lines . $this->bottom();
     }
 
+    public function extension() : string
+    {
+        return 'html';
+    }
+
     private function top() : string
     {
         return <<<'TOP'
