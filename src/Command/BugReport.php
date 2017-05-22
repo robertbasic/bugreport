@@ -4,12 +4,16 @@ declare(strict_types=1);
 namespace BugReport\Command;
 
 use BugReport\Dependency;
+use BugReport\Formatter\Formatter;
+use BugReport\Formatter\Html;
+use BugReport\Formatter\Text;
 use BugReport\InstalledDependencies;
 use BugReport\Service\BugReport as BugReportService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class BugReport extends Command
@@ -42,7 +46,8 @@ class BugReport extends Command
         $this->setName('bugreport')
             ->setDescription('Create a bug report.')
             ->setHelp('bugreport user/repo')
-            ->addArgument('dependency', InputArgument::OPTIONAL, 'Project dependency or composer.json file');
+            ->addArgument('dependency', InputArgument::OPTIONAL, 'Project dependency or composer.json file')
+            ->addOption('html', null, InputOption::VALUE_NONE, 'HTML format of the report');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -64,7 +69,9 @@ class BugReport extends Command
 
         $output->writeln('Done generating report.');
 
-        $this->saveReport($output);
+        $formatter = $this->getFormatter($input);
+
+        $this->saveReport($formatter, $output);
     }
 
     private function handleProjectDependencies(OutputInterface $output)
@@ -94,12 +101,23 @@ class BugReport extends Command
         $this->bugreport->handleProjectDependency($dependency);
     }
 
-    private function saveReport(OutputInterface $output)
+    private function saveReport(Formatter $formatter, OutputInterface $output)
     {
         $output->writeln('Saving report.');
 
-        $filename = $this->bugreport->saveReport();
+        $filename = $this->bugreport->saveReport($formatter);
 
         $output->writeln('Report saved as: ' . $filename);
+    }
+
+    private function getFormatter(InputInterface $input) : Formatter
+    {
+        $html = $input->getOption('html');
+
+        if ($html) {
+            return new Html();
+        }
+
+        return new Text();
     }
 }
