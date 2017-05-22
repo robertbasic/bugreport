@@ -2,3 +2,4 @@ vendor/
 tests/code-coverage/
 bugreport.json
 bugreport.txt
+bugreport.html

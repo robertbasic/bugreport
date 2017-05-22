@@ -8,8 +8,8 @@ use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
 use BugReport\Service\Config;
 use BugReport\Stats\OpenIssues;
-use BugReport\Writer\Text;
-use BugReport\Writer\Writer;
+use BugReport\Formatter\Text;
+use BugReport\Formatter\Formatter;
 use Github\Client;
 use Github\ResultPager;
 use Github\ResultPagerInterface;
@@ -76,14 +76,16 @@ class BugReport
     {
         $filename = $this->config->bugreportFilename();
 
-        $this->getWriter()->write($this->report, $filename);
+        $report = $this->getFormatter()->format($this->report);
+
+        file_put_contents($filename, $report);
 
         $this->clearReport();
 
         return $filename;
     }
 
-    private function getWriter() : Writer
+    private function getFormatter() : Formatter
     {
         return new Text();
     }

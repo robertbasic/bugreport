@@ -1,18 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReport\Writer;
+namespace BugReport\Formatter;
 
-class Text implements Writer
+class Text implements Formatter
 {
-    public function write(array $report, string $filename)
-    {
-        $lines = $this->formatReport($report);
-
-        file_put_contents($filename, $lines);
-    }
-
-    private function formatReport(array $report) : string
+    public function format(array $report) : string
     {
         $lines = '';
 
