@@ -12,11 +12,12 @@ class DependencyTest extends TestCase
      * @test
      * @dataProvider validUserRepos
      */
-    public function it_creates_a_dependency_from_user_repo_string($userRepo, $url, $user, $repo)
+    public function it_creates_a_dependency_from_user_repo_string($userRepo, $url, $shortUrl, $user, $repo)
     {
         $dependency = Dependency::fromUserRepo($userRepo);
 
         $this->assertSame($url, $dependency->url());
+        $this->assertSame($shortUrl, $dependency->shortUrl());
         $this->assertSame($user, (string) $dependency->user());
         $this->assertSame($repo, (string) $dependency->repo());
     }
@@ -37,24 +38,28 @@ class DependencyTest extends TestCase
             [
                 'robertbasic/bugreport',
                 'https://github.com/robertbasic/bugreport',
+                'robertbasic/bugreport',
                 'robertbasic',
                 'bugreport',
             ],
             [
                 'robertbasic86/bugreport',
                 'https://github.com/robertbasic86/bugreport',
+                'robertbasic86/bugreport',
                 'robertbasic86',
                 'bugreport',
             ],
             [
                 'robertbasic/bugreport42',
                 'https://github.com/robertbasic/bugreport42',
+                'robertbasic/bugreport42',
                 'robertbasic',
                 'bugreport42',
             ],
             [
                 'robert-basic/bug-report42',
                 'https://github.com/robert-basic/bug-report42',
+                'robert-basic/bug-report42',
                 'robert-basic',
                 'bug-report42',
             ],
