@@ -89,6 +89,7 @@ see the [tags on this repository](https://github.com/robertbasic/bugreport/tags)
  - [ ] number of contributors (regular vs. occasional)
  - [ ] age of last release
  - [ ] activity in the last 30 days (opened vs. closed issues/PRs)
+ - [ ] get project name from composer.json
 
 ## authors
 
