@@ -8,7 +8,6 @@ use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
 use BugReport\Service\Config;
 use BugReport\Stats\OpenIssues;
-use BugReport\Formatter\Text;
 use BugReport\Formatter\Formatter;
 use Github\Client;
 use Github\ResultPager;
@@ -72,22 +71,17 @@ class BugReport
         $this->report[] = $line;
     }
 
-    public function saveReport() : string
+    public function saveReport(Formatter $formatter) : string
     {
         $filename = $this->config->bugreportFilename();
 
-        $report = $this->getFormatter()->format($this->report);
+        $report = $formatter->format($this->report);
 
         file_put_contents($filename, $report);
 
         $this->clearReport();
 
         return $filename;
-    }
-
-    private function getFormatter() : Formatter
-    {
-        return new Text();
     }
 
     private function clearReport()
