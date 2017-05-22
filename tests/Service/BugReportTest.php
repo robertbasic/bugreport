@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace BugReportTest\Service;
 
 use BugReport\Dependency;
+use BugReport\Formatter\Html;
+use BugReport\Formatter\Text;
 use BugReport\Service\BugReport;
 use BugReport\Service\Config;
 use BugReport\Stats\Dependency as DependencyStats;
@@ -89,7 +91,7 @@ class BugReportTest extends TestCase
     /**
      * @test
      */
-    public function it_can_save_the_report_to_a_file()
+    public function it_can_save_the_report_to_a_text_file()
     {
         $dependency = Dependency::fromUserRepo('mockery/mockery');
 
@@ -111,9 +113,47 @@ class BugReportTest extends TestCase
             ->once()
             ->andReturn('test_bugreport.txt');
 
+        $formatter = new Text();
+
         $this->service->handleProjectDependency($dependency);
 
-        $filename = $this->service->saveReport();
+        $filename = $this->service->saveReport($formatter);
+
+        $this->assertFileExists($filename);
+
+        unlink($filename);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_save_the_report_to_a_html_file()
+    {
+        $dependency = Dependency::fromUserRepo('mockery/mockery');
+
+        $params = [
+            'mockery',
+            'mockery',
+            ['state' => 'open'],
+        ];
+
+        $issues = [];
+
+        $this->pager->shouldReceive()
+            ->fetchAll($this->issueApi, 'all', $params)
+            ->once()
+            ->andReturn($issues);
+
+        $this->config->shouldReceive()
+            ->bugreportFilename()
+            ->once()
+            ->andReturn('test_bugreport.html');
+
+        $formatter = new Html();
+
+        $this->service->handleProjectDependency($dependency);
+
+        $filename = $this->service->saveReport($formatter);
 
         $this->assertFileExists($filename);
 
