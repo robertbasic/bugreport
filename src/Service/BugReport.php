@@ -7,7 +7,7 @@ use BugReport\Dependency;
 use BugReport\GitHub\Issues;
 use BugReport\InstalledDependencies;
 use BugReport\Service\Config;
-use BugReport\Stats\Dependency as DependencyStats;
+use BugReport\Stats\OpenIssues;
 use BugReport\Writer\Text;
 use BugReport\Writer\Writer;
 use Github\Client;
@@ -62,11 +62,11 @@ class BugReport
     {
         $issues = $this->issues->fetch($dependency);
 
-        $stats = new DependencyStats($issues);
+        $openIssues = new OpenIssues($issues);
 
         $line = [
             'dependency' => $dependency,
-            'stats' => $stats,
+            'open_issues' => $openIssues,
         ];
 
         $this->report[] = $line;
