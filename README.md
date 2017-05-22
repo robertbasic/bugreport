@@ -8,14 +8,12 @@ Get a bug report on a project's dependencies.
 
 Looks at a GitHub repository and reports on:
 
- - number of open issues (done),
- - average age of open issues (done),
- - age of oldest open issue (done),
- - age of newest open issue (done),
- - number of open pull requests (done),
- - average age of open pull requests (done),
- - is the project deprecated?
- - did the project move?
+ - number of open issues,
+ - average age of open issues,
+ - age of oldest open issue,
+ - age of newest open issue,
+ - number of open pull requests,
+ - average age of open pull requests.
 
 Current version is: 0.0.1
 
@@ -79,6 +77,17 @@ to us.
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available,
 see the [tags on this repository](https://github.com/robertbasic/bugreport/tags).
+
+## todo
+
+ - [ ] interactive configuration
+ - [ ] write report as html
+ - [ ] phar for distribution
+ - [ ] is the project deprecated?
+ - [ ] did the project move?
+ - [ ] number of contributors (regular vs. occasional)
+ - [ ] age of last release
+ - [ ] activity in the last 30 days (opened vs. closed issues/PRs)
 
 ## authors
 
