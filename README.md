@@ -1,6 +1,7 @@
 # bugreport
 
 [![Build Status](https://travis-ci.org/robertbasic/bugreport.png?branch=master)](https://travis-ci.org/robertbasic/bugreport)
+[![Coverage Status](https://coveralls.io/repos/github/robertbasic/bugreport/badge.svg?branch=master)](https://coveralls.io/github/robertbasic/bugreport?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/robertbasic/bugreport/v/stable)](https://packagist.org/packages/robertbasic/bugreport)
 [![License](https://poser.pugx.org/robertbasic/bugreport/license)](https://packagist.org/packages/robertbasic/bugreport)
 
