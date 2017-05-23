@@ -5,7 +5,6 @@ namespace BugReport\Service;
 
 use BugReport\Dependency;
 use BugReport\GitHub\Issues;
-use BugReport\InstalledDependencies;
 use BugReport\Service\Config;
 use BugReport\Stats\OpenIssues;
 use BugReport\Formatter\Formatter;

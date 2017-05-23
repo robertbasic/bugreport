@@ -14,12 +14,8 @@ class InstalledDependencies
      */
     private $projects = [];
 
-    private function __construct(string $lockfile)
+    private function __construct(array $packages)
     {
-        $lockfile = json_decode(file_get_contents($lockfile), true);
-
-        $packages = array_merge($lockfile['packages'], $lockfile['packages-dev']);
-
         foreach ($packages as $package) {
             $userRepo = $this->getUserRepo($package);
 
@@ -29,11 +25,11 @@ class InstalledDependencies
         }
     }
 
-    public static function fromComposerLockFile(string $lockfile) : self
+    public static function fromComposerPackages(array $packages) : self
     {
-        Assert::fileExists($lockfile);
+        Assert::notEmpty($packages);
 
-        return new self($lockfile);
+        return new self($packages);
     }
 
     public function all() : array

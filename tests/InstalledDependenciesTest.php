@@ -11,11 +11,13 @@ class InstalledDependenciesTest extends TestCase
     /**
      * @test
      */
-    public function it_gets_all_projects_of_git_type_from_composer_lock_file()
+    public function it_gets_all_projects_of_git_type_from_composer_packages()
     {
         $lockfile = __DIR__ . '/fixtures/composer.lock';
+        $lockfile = json_decode(file_get_contents($lockfile), true);
+        $packages = array_merge($lockfile['packages'], $lockfile['packages-dev']);
 
-        $installedDependencies = InstalledDependencies::fromComposerLockFile($lockfile);
+        $installedDependencies = InstalledDependencies::fromComposerPackages($packages);
 
         $expected = [
             "clue/php-stream-filter",
@@ -78,8 +80,8 @@ class InstalledDependenciesTest extends TestCase
      * @test
      * @expectedException InvalidArgumentException
      */
-    public function it_cannot_get_installed_dependencies_from_a_non_existent_composer_lock_file()
+    public function it_cannot_get_installed_dependencies_from_no_packages()
     {
-        InstalledDependencies::fromComposerLockFile('non-existent/composer.lock');
+        InstalledDependencies::fromComposerPackages([]);
     }
 }

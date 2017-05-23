@@ -9,6 +9,7 @@ use BugReport\Formatter\Html;
 use BugReport\Formatter\Text;
 use BugReport\InstalledDependencies;
 use BugReport\Service\BugReport as BugReportService;
+use BugReport\Service\Packages;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
@@ -76,7 +77,8 @@ class BugReport extends Command
 
     private function handleProjectDependencies(OutputInterface $output)
     {
-        $dependencies = InstalledDependencies::fromComposerLockFile($this->lockfile);
+        $packages = Packages::fromComposerLockFile($this->lockfile)->packages();
+        $dependencies = InstalledDependencies::fromComposerPackages($packages);
 
         $output->writeln('Getting bugreport for ' . $dependencies->total() . ' installed dependencies');
 
