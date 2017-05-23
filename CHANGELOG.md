@@ -4,6 +4,7 @@
 
 ### Added
  - `--html` command line option to create an HTML report
+ - Read a composer.lock file from a given path
 
 ### Changed
  - N/A

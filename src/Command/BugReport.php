@@ -47,7 +47,7 @@ class BugReport extends Command
         $this->setName('bugreport')
             ->setDescription('Create a bug report.')
             ->setHelp('bugreport user/repo')
-            ->addArgument('dependency', InputArgument::OPTIONAL, 'Project dependency or composer.json file')
+            ->addArgument('dependency', InputArgument::OPTIONAL, 'Project dependency or composer.lock file')
             ->addOption('html', null, InputOption::VALUE_NONE, 'HTML format of the report');
     }
 
@@ -58,14 +58,13 @@ class BugReport extends Command
         $configured = $this->bugreport->isConfigured() ? 'Yes.' : 'No.';
         $output->writeln('Configuration file loaded? ' . $configured);
 
-        $dependency = $input->getArgument('dependency');
+        $dependency = $this->getDependency($input);
 
-        if (!is_null($dependency)) {
-            $output->writeln('Getting bugreport for ' . $dependency);
-
-            $this->handleProjectDependency($dependency);
+        if (is_file($dependency)) {
+            $this->handleProjectDependencies($dependency, $output);
         } else {
-            $this->handleProjectDependencies($output);
+            $output->writeln('Getting bugreport for ' . $dependency);
+            $this->handleProjectDependency($dependency);
         }
 
         $output->writeln('Done generating report.');
@@ -75,9 +74,9 @@ class BugReport extends Command
         $this->saveReport($formatter, $output);
     }
 
-    private function handleProjectDependencies(OutputInterface $output)
+    private function handleProjectDependencies(string $dependency, OutputInterface $output)
     {
-        $packages = Packages::fromComposerLockFile($this->lockfile)->packages();
+        $packages = Packages::fromComposerLockFile($dependency)->packages();
         $dependencies = InstalledDependencies::fromComposerPackages($packages);
 
         $output->writeln('Getting bugreport for ' . $dependencies->total() . ' installed dependencies');
@@ -110,6 +109,17 @@ class BugReport extends Command
         $filename = $this->bugreport->saveReport($formatter);
 
         $output->writeln('Report saved as: ' . $filename);
+    }
+
+    private function getDependency(InputInterface $input) : string
+    {
+        $dependency = $input->getArgument('dependency');
+
+        if (is_null($dependency)) {
+            return $this->lockfile;
+        }
+
+        return $dependency;
     }
 
     private function getFormatter(InputInterface $input) : Formatter

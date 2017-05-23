@@ -89,7 +89,7 @@ class BugReportTest extends TestCase
     /**
      * @test
      */
-    public function it_executes_for_an_existing_composer_lock_file()
+    public function it_executes_for_an_existing_composer_lock_file_when_not_provided_as_argument()
     {
         $lockfile = getcwd() . '/tests/fixtures/composer.lock';
 
@@ -110,6 +110,33 @@ class BugReportTest extends TestCase
             ->once();
 
         $command = new BugReportTestCommand($this->service, null, $lockfile);
+        $command->execute($this->input, $this->output);
+    }
+
+    /**
+     * @test
+     */
+    public function it_executes_for_an_existing_composer_lock_file_when_provided_as_argument()
+    {
+        $lockfile = getcwd() . '/tests/fixtures/composer.lock';
+
+        $this->input->shouldReceive()
+            ->getArgument('dependency')
+            ->once()
+            ->andReturn($lockfile);
+
+        $this->output->shouldReceive()
+            ->writeln(Mockery::any());
+
+        $this->service->shouldReceive()
+            ->handleProjectDependency(Mockery::type(Dependency::class))
+            ->times(50);
+
+        $this->service->shouldReceive()
+            ->saveReport(Mockery::type(Text::class))
+            ->once();
+
+        $command = new BugReportTestCommand($this->service);
         $command->execute($this->input, $this->output);
     }
 
