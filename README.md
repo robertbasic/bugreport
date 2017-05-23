@@ -107,6 +107,7 @@ see the [tags on this repository](https://github.com/robertbasic/bugreport/tags)
  - [ ] age of last release
  - [ ] activity in the last 30 days (opened vs. closed issues/PRs)
  - [ ] get project name from composer.json
+ - [ ] level of dependency to check (1st, 2nd, other)
 
 ## authors
 
