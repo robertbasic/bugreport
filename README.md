@@ -18,6 +18,8 @@ Looks at a GitHub repository and reports on:
 
 Current version is: 0.0.1
 
+This is a PHP 7+ project.
+
 ## installation
 
 Install it with composer as a `--dev` dependency:
