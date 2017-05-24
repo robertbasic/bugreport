@@ -8,18 +8,10 @@ use BugReport\Service\GitHub\Issues;
 use BugReport\Service\Config;
 use BugReport\Stats\OpenIssues;
 use BugReport\Formatter\Formatter;
-use Github\Client;
-use Github\ResultPager;
-use Github\ResultPagerInterface;
 
 class BugReport
 {
     const VERSION = '0.1.0-dev';
-
-    /**
-     * @var Client
-     */
-    private $client;
 
     /**
      * @var Issues
@@ -36,19 +28,11 @@ class BugReport
      */
     private $report;
 
-    public function __construct(Client $client, ResultPagerInterface $pager, Config $config)
+    public function __construct(Issues $issues, Config $config)
     {
-        $this->client = $client;
-
-        if ($config->hasConfig()) {
-            $this->client->authenticate($config->githubPersonalAccessToken(), null, Client::AUTH_HTTP_TOKEN);
-        }
+        $this->issues = $issues;
 
         $this->config = $config;
-
-        $issueApi = $this->client->issue();
-
-        $this->issues = new Issues($pager, $issueApi);
     }
 
     public function isConfigured() : bool
