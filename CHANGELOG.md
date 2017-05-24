@@ -10,7 +10,7 @@
  - N/A
 
 ### Fixed
- - N/A
+ - Mixed up columns on the HTML report
 
 ### Removed
  - N/A
