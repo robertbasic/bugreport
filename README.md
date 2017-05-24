@@ -16,7 +16,7 @@ Looks at a GitHub repository and reports on:
  - number of open pull requests,
  - average age of open pull requests.
 
-Current version is: 0.0.1
+Current version is: 0.1.0
 
 This is a PHP 7+ project.
 
@@ -25,7 +25,7 @@ This is a PHP 7+ project.
 Install it with composer as a `--dev` dependency:
 
 ```
-composer require --dev robertbasic/bugreport:0.0.1
+composer require --dev robertbasic/bugreport:0.1.0
 ```
 
 ## usage
@@ -95,6 +95,10 @@ to us.
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available,
 see the [tags on this repository](https://github.com/robertbasic/bugreport/tags).
+
+## changelog
+
+Please read the [changelog](CHANGELOG.md).
 
 ## todo
 

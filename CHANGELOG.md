@@ -3,6 +3,20 @@
 ## [Unreleased] - unreleased
 
 ### Added
+ - N/A
+
+### Changed
+ - N/A
+
+### Fixed
+ - N/A
+
+### Removed
+ - N/A
+
+## [0.1.0] - 2017-05-24
+
+### Added
  - `--html` command line option to create an HTML report
  - Read a composer.lock file from a given path
 

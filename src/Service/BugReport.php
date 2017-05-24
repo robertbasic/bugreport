@@ -11,7 +11,7 @@ use BugReport\Formatter\Formatter;
 
 class BugReport
 {
-    const VERSION = '0.1.0-dev';
+    const VERSION = '0.1.0';
 
     /**
      * @var Issues
