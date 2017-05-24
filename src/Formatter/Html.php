@@ -17,10 +17,10 @@ class Html implements Formatter
             $lines .= "<td><a href='" . $dependency->url() . "'>" . $dependency->shortUrl() . "</a></td>";
             $lines .= "<td>" . $openIssues->openIssues() . "</td>";
             $lines .= "<td>" . $openIssues->pullRequests() . "</td>";
-            $lines .= "<td>" . $openIssues->oldestOpenIssue() . " days</td>";
-            $lines .= "<td>" . $openIssues->newestOpenIssue() . " days</td>";
             $lines .= "<td>" . $openIssues->openIssuesAverageAge() . " days</td>";
             $lines .= "<td>" . $openIssues->pullRequestsAverageAge() . " days</td>";
+            $lines .= "<td>" . $openIssues->oldestOpenIssue() . " days</td>";
+            $lines .= "<td>" . $openIssues->newestOpenIssue() . " days</td>";
             $lines .= "</tr>";
         }
 
