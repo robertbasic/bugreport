@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReportTest\GitHub;
+namespace BugReportTest\Service\GitHub;
 
 use BugReport\Dependency;
-use BugReport\GitHub\Issues;
+use BugReport\Service\GitHub\Issues;
 use Github\Api\ApiInterface;
 use Github\ResultPagerInterface;
 use Mockery;
@@ -56,7 +56,7 @@ class IssuesTest extends TestCase
             ['state' => 'open']
         ];
 
-        $this->apiResponse = include __DIR__ . '/../fixtures/issues_mockery_all.php';
+        $this->apiResponse = include __DIR__ . '/../../fixtures/issues_mockery_all.php';
 
         $this->issues = new Issues($this->pager, $this->api);
     }

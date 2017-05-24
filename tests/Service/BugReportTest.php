@@ -8,10 +8,8 @@ use BugReport\Formatter\Html;
 use BugReport\Formatter\Text;
 use BugReport\Service\BugReport;
 use BugReport\Service\Config;
+use BugReport\Service\GitHub\Issues;
 use BugReport\Stats\Dependency as DependencyStats;
-use Github\Api\ApiInterface;
-use Github\Client;
-use Github\ResultPagerInterface;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery\MockInterface;
@@ -22,19 +20,9 @@ class BugReportTest extends TestCase
     use MockeryPHPUnitIntegration;
 
     /**
-     * @var Client|MockInterface
+     * @var Issues|MockInterface
      */
-    private $client;
-
-    /**
-     * @var ResultPagerInterface|MockInterface
-     */
-    private $pager;
-
-    /**
-     * @var ApiInterface|MockInterface
-     */
-    private $issueApi;
+    private $issues;
 
     /**
      * @var Config|MockInterface
@@ -48,9 +36,7 @@ class BugReportTest extends TestCase
 
     public function setup()
     {
-        $this->client = Mockery::mock(Client::class);
-        $this->pager = Mockery::mock(ResultPagerInterface::class);
-        $this->issueApi = Mockery::mock(ApiInterface::class);
+        $this->issues = Mockery::mock(Issues::class);
 
         $this->config = Mockery::mock(Config::class);
         $this->config->shouldReceive()
@@ -58,11 +44,7 @@ class BugReportTest extends TestCase
             ->andReturn(false)
             ->byDefault();
 
-        $this->client->shouldReceive()
-            ->issue()
-            ->andReturn($this->issueApi);
-
-        $this->service = new BugReport($this->client, $this->pager, $this->config);
+        $this->service = new BugReport($this->issues, $this->config);
     }
 
     /**
@@ -72,16 +54,10 @@ class BugReportTest extends TestCase
     {
         $dependency = Dependency::fromUserRepo('mockery/mockery');
 
-        $params = [
-            'mockery',
-            'mockery',
-            ['state' => 'open'],
-        ];
-
         $issues = include __DIR__ . '/../fixtures/issues_mockery_all.php';
 
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', $params)
+        $this->issues->shouldReceive()
+            ->fetch($dependency)
             ->once()
             ->andReturn($issues);
 
@@ -95,16 +71,10 @@ class BugReportTest extends TestCase
     {
         $dependency = Dependency::fromUserRepo('mockery/mockery');
 
-        $params = [
-            'mockery',
-            'mockery',
-            ['state' => 'open'],
-        ];
-
         $issues = [];
 
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', $params)
+        $this->issues->shouldReceive()
+            ->fetch($dependency)
             ->once()
             ->andReturn($issues);
 
@@ -131,16 +101,10 @@ class BugReportTest extends TestCase
     {
         $dependency = Dependency::fromUserRepo('mockery/mockery');
 
-        $params = [
-            'mockery',
-            'mockery',
-            ['state' => 'open'],
-        ];
-
         $issues = [];
 
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', $params)
+        $this->issues->shouldReceive()
+            ->fetch($dependency)
             ->once()
             ->andReturn($issues);
 
@@ -163,29 +127,10 @@ class BugReportTest extends TestCase
     /**
      * @test
      */
-    public function it_authenticates_if_configured()
+    public function it_is_configured()
     {
-        $dependency = 'mockery/mockery';
-
-        $this->config->shouldReceive()
-            ->hasConfig()
-            ->twice()
-            ->andReturn(true);
-
-        $this->config->shouldReceive()
-            ->githubPersonalAccessToken()
-            ->once()
-            ->andReturn('github-pat');
-
-        $this->client->shouldReceive()
-            ->authenticate('github-pat', null, Client::AUTH_HTTP_TOKEN)
-            ->once();
-
-        $this->pager->shouldReceive()
-            ->fetchAll($this->issueApi, 'all', Mockery::any())
-            ->andReturn([]);
-
-        $service = new BugReport($this->client, $this->pager, $this->config);
+        $config = new Config(__DIR__ . '/../fixtures/bugreport_config.json');
+        $service = new BugReport($this->issues, $config);
 
         $this->assertTrue($service->isConfigured());
     }

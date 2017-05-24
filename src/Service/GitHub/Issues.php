@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReport\GitHub;
+namespace BugReport\Service\GitHub;
 
 use BugReport\Dependency;
 use Github\Api\ApiInterface;

@@ -1,23 +1,23 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReportTest;
+namespace BugReportTest\Dependencies;
 
-use BugReport\InstalledDependencies;
+use BugReport\Dependencies\Installed;
 use PHPUnit\Framework\TestCase;
 
-class InstalledDependenciesTest extends TestCase
+class InstalledTest extends TestCase
 {
     /**
      * @test
      */
     public function it_gets_all_projects_of_git_type_from_composer_packages()
     {
-        $lockfile = __DIR__ . '/fixtures/composer.lock';
+        $lockfile = __DIR__ . '/../fixtures/composer.lock';
         $lockfile = json_decode(file_get_contents($lockfile), true);
         $packages = array_merge($lockfile['packages'], $lockfile['packages-dev']);
 
-        $installedDependencies = InstalledDependencies::fromComposerPackages($packages);
+        $installedDependencies = Installed::fromComposerPackages($packages);
 
         $expected = [
             "clue/php-stream-filter",
@@ -82,6 +82,6 @@ class InstalledDependenciesTest extends TestCase
      */
     public function it_cannot_get_installed_dependencies_from_no_packages()
     {
-        InstalledDependencies::fromComposerPackages([]);
+        Installed::fromComposerPackages([]);
     }
 }
