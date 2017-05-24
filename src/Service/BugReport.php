@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace BugReport\Service;
 
 use BugReport\Dependency;
-use BugReport\GitHub\Issues;
+use BugReport\Service\GitHub\Issues;
 use BugReport\Service\Config;
 use BugReport\Stats\OpenIssues;
 use BugReport\Formatter\Formatter;
