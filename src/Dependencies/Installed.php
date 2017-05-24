@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace BugReport;
+namespace BugReport\Dependencies;
 
 use Webmozart\Assert\Assert;
 
-class InstalledDependencies
+class Installed
 {
     const TYPE_GIT = 'git';
 
